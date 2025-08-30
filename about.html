@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="shortcut icon" href="static/images/my-avatar.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="static/css/portfolio.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header-container"></header>
+
+
+    <section class="about_section-one">
+    <div class="about_wrapper">
+        <div class="about_lft-wrp">
+            <div class="about_name-con">
+                <h1 class="name_par">Hi I'm Emmanuel</h1>
+            </div>
+            <div class="about_img-con">
+                <img src="static/images/brills-avatar.png" alt="Emmibrill-Udo-avatar" class="about_img">
+            </div>
+        </div>
+        
+        <div class="about_rht-wrp">
+            <p>
+                I'm a civil engineer and a software Engineer based in Lagos. I love writing codes, and solving problems 
+                using technology. I am passionate about building innovative solutions that make a 
+                difference in people's lives. I love colaboration and I am always eager to learn new skills and technologies.
+            </p>
+
+            <p>
+                Guess what? I am also a project manager. I love leadership roles, and I enjoy working out    
+            </p>
+
+            <div class="social_con">
+                <a href="contact.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z"/></svg></a>
+            </div>
+            
+        </div>
+    </div>  
+    
+</section>
+<section class="about_section-two">
+    <h1 class="civil_engr">As a Civil Engineer</h1>
+    <div class="section_des">
+        <article>
+            <p>I take part in the building processes of a structure; 
+                the procurement phase when dealing with outsourcing and 
+                selection of vendors for a particular scope of work.
+                The construction and supervision phase which demands careful supervision,
+                management, making sure that all work processes are done in accordance to the 
+                standards of structure to uphold structural integrity of every structural
+                member while also considering time, quality and cost which are the threee major
+                aspects to look out for in construction 
+            </p>
+        </article>
+    </div>
+</section>
+<section class="about_section-three swiper mySwiper">
+    <div class="work_gallery swiper-wrapper">
+        <div class="item swiper-slide"><img class="item_img" src="static/images/levelling-operation-instrument.webp" alt=""></div>
+        <div class="item swiper-slide"><img class="item_img" src="static/images/filigree-slab-installation.webp" alt=""></div>
+        <div class="item swiper-slide"><img class="item_img" src="static/images/construction-workers-on-site.webp" alt=""></div>
+        <div class="item swiper-slide"><img class="item_img" src="static/images/sitting-on-a-compacting-machine.webp" alt=""></div>
+        <div class="item swiper-slide"><img class="item_img" src="static/images/my-avatar.png" alt=""></div>
+    </div>
+    <div class="swiper-pagination"></div>
+</section>
+    
+
+    <!-- Footer -->
+    <footer id="footer-container"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+     <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        });
+    </script>
+    <script src="/static/js/portfolio.js"></script>
+
+</body>
+</html>

@@ -85,54 +85,6 @@
     
 }
 
-
-/*
-*:root {
-  
-  --bg-color-nav: rgb(18, 18, 20); 
-  --mobile-nav-bg: rgb(28, 28, 35); 
-  --mobile-nav-text-color: rgb(240, 240, 245); 
-  --nav-active: rgb(98, 188, 250);
-  --hambugger-color: rgb(240, 240, 245);
-
-  --no-project-bg: rgb(18, 18, 20);
-  --no-project-dialogue-box-bg: rgb(32, 34, 42);
-  --no-project-dialogue-box-text-color: rgb(235, 235, 240);
-  --no-project-dialogue-box-icon-color: rgb(255, 121, 168); 
-
-  --dialogue-box-btn-bg: rgb(98, 188, 250);
-  --dialogue-box-btn-text-color: rgb(18, 18, 20);
-  --dialogue-box-btn-hover-bg: rgb(255, 121, 168);
-  --dialogue-box-btn-hover-text-color: rgb(18, 18, 20);
-
-  --form-heading-color: rgb(240, 240, 245);
-  --form-section-bg: rgb(18, 18, 20);
-  --contact-form-bg: rgb(28, 28, 35);
-  --form-input-bdr-color: rgb(38, 40, 48);
-  --form-input-bg-color: rgba(255, 255, 255, 0.04); 
-  --form-input-txt-color: rgb(235, 235, 240);
-
-  --input-focus-bdr-color: rgb(255, 121, 168); 
-  --input-focus-outline-color: rgba(255, 121, 168, 0.4);
-  --input-focus-box-shadow: rgba(255, 121, 168, 0.2);
-
-  --contact-frm-label-color: rgb(235, 235, 240);
-  --contact-frm-label-bg: rgba(28, 28, 35, 0.9);
-
-  --box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.4);
-
-  --contact-submit-btn-bg: rgb(98, 188, 250);
-  --contact-submit-btn-bdr-color: rgb(98, 188, 250);
-  --contact-submit-btn-text-color: rgb(18, 18, 20);
-
-  --contact-submit-btn-hover-bg: rgb(255, 121, 168);
-  --contact-submit-btn-hover-text-color: rgb(18, 18, 20);
-  --contact-submit-btn-hover-bdr-color: rgb(255, 121, 168);
-
-  font-family: 'Comfortaa', cursive;
-}
-*/
-
 html,
 body {
     width: 100%;
@@ -291,17 +243,8 @@ footer {
     gap: 2rem;
 }
 
-.name_socials {
-    flex: 50% 0;
-    padding: 0 1rem;
-}
 
-.links {
-    flex: 0 40%;
-    text-align: right;
-    padding: 1rem;
-    padding-block: 1rem;
-}
+
 
 .links ul li {
     padding: .4rem;
@@ -311,10 +254,6 @@ footer {
     color: var(--mobile-nav-text-color);
 }
 
-.footer_socials .social {
-    width: 2rem;
-    height: .5rem;
-}
 
 /* style animation -- coded by Brill animation */
 
@@ -520,15 +459,7 @@ footer {
     color: var(--clr-8);
 }
 /*
-.wrk_in_progress{
-    display: grid;
-    place-items: center;
-    color: var(--mobile-nav-text-color);
-    padding: 1rem;
-    text-align: center;
-    gap: 2rem;
-}
-*/
+
 
 /* style the display no project message dialogue box*/
 
@@ -1234,18 +1165,6 @@ footer {
     }
 }
 
-/*.about_img-con::after {
-    position: absolute;
-    content: '';
-    width: 45%;
-    height: 45%;
-    bottom: 0;
-    right: 0;
-    border-bottom: 5px solid #0ff;
-
-    border-right: 5px solid #0ff;
-}*/
-
 .about_rht-wrp {
     width: 100%;
     padding: 2rem 2rem 0 0;
@@ -1264,37 +1183,6 @@ footer {
 }
 
 
-/* contact social */
-.social_con {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 5rem;
-    padding: 2rem 1rem 1rem;
-    border-bottom: 2px solid var(--bg-color-nav);
-    width: fit-content;
-}
-
-.social {
-    width: 3rem;
-    height: 3rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social.facebook svg {
-    fill: rgb(59, 89, 152);
-}
-
-.social.instagram svg {
-    fill: rgb(193, 53, 132);
-}
-
-.social.linkedin svg {
-    fill: rgb(130, 175, 198);
-}
 
 @keyframes zoom {
     0% {
@@ -1307,11 +1195,11 @@ footer {
     }
 }
 
-.email {
+/* .email {
     fill: rgb(101, 203, 203);
     animation: zoom 2s linear infinite alternate;
     transition: all ease-in-out;
-}
+} */
 
 .about_section-two {
     display: flex;
@@ -1764,22 +1652,9 @@ footer {
     }
 
     /* contact social */
-    .social_con {
-        width: 100%;
-        justify-content: center;
-        gap: 5rem;
-        margin: 1rem 0;
-        padding: 1rem;
-        border-top: 2px solid var(--bg-color-nav);
 
-    }
 
-    .social {
-        width: 2rem;
-        height: 2rem;
-        position: relative;
-    }
-
+  
     /* style footer */
 
 
@@ -1810,10 +1685,7 @@ footer {
         padding: 0 1rem;
     }
 
-    .footer_socials .social {
-        width: 2rem;
-        height: 2rem;
-    }
+
 
     /** style tools section **/
 
@@ -1944,9 +1816,9 @@ footer {
     }
 
     .follow_icon > a:nth-child(2) svg{
-        fill: rgb(193, 53, 132);
         fill: var(--mobile-nav-text-color);
     }
+
     .follow_icon > a:nth-child(3) svg{
         fill:rgb(59, 89, 152);
     }
@@ -2127,11 +1999,6 @@ footer {
     }
     .name_socials{
         display: none;
-    }
-
-    .footer_socials .social {
-        width: 1.5rem;
-        height: 1.5rem;
     }
 
     .avatar_con {
