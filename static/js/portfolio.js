@@ -40,6 +40,7 @@ function removeNavbar() {
   }
 }
 
+
 //show which section is being clicked
 function showClickedNav() {
   for (let i = 0; i < navTabs.length; i++) {

@@ -240,11 +240,49 @@ footer {
 
 .footer_top {
     display: flex;
+    justify-content: center;
     gap: 2rem;
 }
 
+.footer_socials{
+   display: flex;
+   flex: 0 0 40%;    
+    padding: 1rem;
+    gap: 3rem;
+}   
+.footer_socials a{
+    width: 2.8rem;
+    height: 2.8rem;
+    background: var(--form-input-bg-color);
+    border-radius: .7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .3rem;
+    box-shadow: var(--neu-shadow-dark), var(--neu-shadow-light) ;
+}
+.footer_socials a i {
+   font-size: 1.7rem;
+}
+
+.footer_socials a:nth-child(1) i {
+    color: rgb(24, 119, 242);
+}
+.footer_socials a:nth-child(2) i {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); /* Dark purple → red → orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.footer_socials a:nth-child(3) i {
+    color: rgb(59, 89, 152);
+}
 
 
+.links {
+    display: flex;
+    justify-content: end;
+    flex: 0 0 60%;
+}
 
 .links ul li {
     padding: .4rem;
@@ -880,7 +918,7 @@ footer {
     width: 100%;
     border-radius: .5rem;
     margin: auto;
-    padding: .5rem 2rem;
+    padding: .8rem 2rem;
     font-size: 1.2rem;
     font-weight: bold;
     border: 1px solid none;
@@ -924,8 +962,6 @@ footer {
 }
 .connect_details h3{
     color: var(--mobile-nav-text-color);
-    /* gradient background */
-    /*background: linear-gradient(90deg, #ff7e5f, #feb47b);*/
 }
 
 .connect_details p{
@@ -961,16 +997,16 @@ footer {
     max-height: 2.5rem;
 }
 
-.follow_icon > a:nth-child(1) svg{
+/* .follow_icon > a:nth-child(1) svg{
     fill: rgb(193, 53, 132);
-}
+    
+} */
 
 .follow_icon > a:nth-child(2) svg{
-    fill: rgb(193, 53, 132);
     fill: var(--mobile-nav-text-color);
 }
 .follow_icon > a:nth-child(3) svg{
-    fill:rgb(59, 89, 152);
+    fill: rgb(24, 119, 242);
 }
 
 /*thank you page*/
@@ -1195,12 +1231,30 @@ footer {
     }
 }
 
-/* .email {
+/* about email icon */
+
+.social_con a {
+    display: inline-block;
+    margin: 0 .5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--form-input-bg-color);
+    border-radius: .7rem;
+    box-shadow: var(--neu-shadow-dark), var(--neu-shadow-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .3rem;
+    transition: all ease-in-out .4s;
+}
+.social_con a svg {
     fill: rgb(101, 203, 203);
     animation: zoom 2s linear infinite alternate;
     transition: all ease-in-out;
-} */
+}
 
+
+/* about section two */
 .about_section-two {
     display: flex;
     gap: 2rem;
@@ -1491,7 +1545,17 @@ footer {
 
 /** media queries **/
 
-@media (max-width:770px) {
+
+@media screen and (max-width:960px) {
+    .social_con {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0 0;
+    }
+}
+
+@media (max-width:768px) {
     .hambugger {
         position: fixed;
         display: flex;
@@ -1536,10 +1600,10 @@ footer {
         color: var(--mobile-nav-text-color);
     }
 
-    .btn {
+    /* .btn {
         padding: 1rem 3.5rem;
         font-size: 1rem;
-    }
+    } */
 
 
     /*home section*/
@@ -1811,18 +1875,6 @@ footer {
         max-height: 1.7rem;
     }
 
-    .follow_icon > a:nth-child(1) svg{
-        fill: rgb(193, 53, 132);
-    }
-
-    .follow_icon > a:nth-child(2) svg{
-        fill: var(--mobile-nav-text-color);
-    }
-
-    .follow_icon > a:nth-child(3) svg{
-        fill:rgb(59, 89, 152);
-    }
-
     .form_intro{
         font-size: 2rem;
     }
@@ -2074,6 +2126,21 @@ footer {
     }
 }
 
+@media screen and (max-width:413px) {
+     /*about section*/
+
+    .about_img-con {
+        width: 20rem;
+        height: 23rem;
+    }
+
+    .about_img-con>*{
+        width: 60%;
+        height: 60%;
+    }
+
+}
+
 @media (max-width:375px) {
 
     .btn {
@@ -2084,6 +2151,21 @@ footer {
 }
 
 @media (max-width:320px) {
+
+       /*about section*/
+
+    .about_img-con {
+        width: 18.7rem;
+        height: 21rem;
+    }
+
+    .about_img-con>*{
+        width: 60%;
+        height: 60%;
+    }
+    .name_par {
+        font-size: 1.8rem;
+    }
 
     .btn {
         padding: .8rem 2rem;
