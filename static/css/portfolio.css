@@ -2126,12 +2126,15 @@ footer {
     }
 }
 
-@media screen and (max-width:413px) {
+
+@media (max-width:375px) {
+
+
      /*about section*/
 
     .about_img-con {
-        width: 20rem;
-        height: 23rem;
+        width: 25rem;
+        height: 30rem;
     }
 
     .about_img-con>*{
@@ -2139,13 +2142,9 @@ footer {
         height: 60%;
     }
 
-}
-
-@media (max-width:375px) {
-
-    .btn {
+    /* .btn {
         font-size: .8rem;
-    }
+    } */
 
 
 }
