@@ -21,53 +21,53 @@ document.addEventListener("DOMContentLoaded", async () => {
   const navTabsPar = document.querySelectorAll(".list");
 
   //activates the navigation bar and controls the hambugger movement
-function activateNavbar() {
-  let navState = navToggler.getAttribute("aria-controls");
-  if (navState === "closed") {
-    navToggler.setAttribute("aria-controls", "open");
-  } else {
-    navToggler.setAttribute("aria-controls", "closed");
+  function activateNavbar() {
+    let navState = navToggler.getAttribute("aria-controls");
+    if (navState === "closed") {
+      navToggler.setAttribute("aria-controls", "open");
+    } else {
+      navToggler.setAttribute("aria-controls", "closed");
+    }
+    navList.classList.toggle("navActive");
   }
-  navList.classList.toggle("navActive");
-}
 
-//deacivates the navbar on scroll with a corresponding hambugger movement
-function removeNavbar() {
-  let navState = navToggler.getAttribute("aria-controls");
-  if (navState === "open") {
-    navToggler.setAttribute("aria-controls", "closed");
+  //deacivates the navbar on scroll with a corresponding hambugger movement
+  function removeNavbar() {
+    let navState = navToggler.getAttribute("aria-controls");
+    if (navState === "open") {
+      navToggler.setAttribute("aria-controls", "closed");
+      navList.classList.remove("navActive");
+    }
+  }
+
+
+  //show which section is being clicked
+  function showClickedNav() {
+    for (let i = 0; i < navTabs.length; i++) {
+      const element = navTabs[i];
+      element.addEventListener("click", () => {
+        for (let i = 0; i < navTabs.length; i++) {
+          const element = navTabs[i];
+          element.classList.remove("active");
+        }
+        element.classList.add("active");
+      });
+    }
+  }
+
+  showClickedNav();
+
+  window.addEventListener("load", () => {
     navList.classList.remove("navActive");
-  }
-}
+  });
 
+  navToggler.addEventListener("click", () => {
+    activateNavbar();
+  });
 
-//show which section is being clicked
-function showClickedNav() {
-  for (let i = 0; i < navTabs.length; i++) {
-    const element = navTabs[i];
-    element.addEventListener("click", () => {
-      for (let i = 0; i < navTabs.length; i++) {
-        const element = navTabs[i];
-        element.classList.remove("active");
-      }
-      element.classList.add("active");
-    });
-  }
-}
-
-showClickedNav();
-
-window.addEventListener("load", () => {
-  navList.classList.remove("navActive");
-});
-
-navToggler.addEventListener("click", () => {
-  activateNavbar();
-});
-
-window.addEventListener("scroll", () => {
-  removeNavbar();
-});
+  window.addEventListener("scroll", () => {
+    removeNavbar();
+  });
 
 
 });
@@ -543,9 +543,7 @@ function filterTools() {
 
     // Clear previous content
     gridContainer.innerHTML = "";
-    const filteredTools =
-      toolsData.filter((tool) => tool.category === activeCategory)[0]?.tools ||
-      [];
+    const filteredTools = toolsData.filter((tool) => tool.category === activeCategory)[0]?.tools || [];
 
     if (!filteredTools) {
       console.error(`No tools found for category: ${activeCategory}`);
@@ -616,3 +614,68 @@ document.addEventListener("DOMContentLoaded", () => {
   filterTools();
 });
 
+const showProjects = () => {
+  const projectCon = document.querySelector(".portfolio__con");
+  console.log(projectCon);
+  if (!projectCon) return;
+
+  let Project = "";
+  const projectsData = [
+    {
+      title: "Project 1",
+      image: "static/images/brills-avatar.png",
+      description: "Description for Project 1",
+      technologies: [
+        { technology: "HTML" },
+        { technology: "CSS" },
+        { technology: "JavaScript" },
+      ],
+      link: "https://example.com/project1",
+    },
+    {
+      title: "Project 2",
+      image: "static/images/brills-avatar.png",
+      description: "Description for Project 2",
+      technologies: [
+        { technology: "Python" },
+        { technology: "Django" },
+      ],
+      link: "https://example.com/project2",
+    },
+    // Add more projects as needed
+  ];
+  // Loop through your projects data and create HTML for each project
+  projectsData.forEach((project) => {
+
+    let technology = "";
+    project.technologies.forEach((tech) => {
+      technology += `
+        <div class="tool">"${tech.technology}"</div>
+      `;
+    });
+    Project += `
+      <div class="portfolio">
+                <div class="port-image__con">
+                    <img class="port__image" src="${project.image}" alt="${project.title}">
+                </div>
+                <h3 class="portfolio__name">"${project.title}"</h3>
+                <article class="portfolio__des">
+                    <p class="port__par">
+                        "${project.description}"
+                    </p>
+                </article>
+                <div class="tool__con">
+                    "${technology}"
+                </div>
+
+                <div class="view__link">
+                    <a class="btn__view" href="${project.link}"><i class="fa-solid fa-bullseye"></i>Go live</a>
+                </div>
+            </div>
+    `;
+  });
+
+  projectCon.innerHTML = Project;
+  projectCon.scrollIntoView({ behavior: "smooth" });
+};
+showProjects();
