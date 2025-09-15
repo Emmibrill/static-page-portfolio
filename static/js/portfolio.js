@@ -639,6 +639,7 @@ const showProjects = () => {
       technologies: [
         { technology: "Python" },
         { technology: "Django" },
+        
       ],
       link: "https://example.com/project2",
     },
@@ -650,26 +651,26 @@ const showProjects = () => {
     let technology = "";
     project.technologies.forEach((tech) => {
       technology += `
-        <div class="tool">"${tech.technology}"</div>
+        <div class="tool">${tech.technology}</div>
       `;
     });
     Project += `
       <div class="portfolio">
                 <div class="port-image__con">
-                    <img class="port__image" src="${project.image}" alt="${project.title}">
+                    <img class="port__image" src=${project.image} alt=${project.title}>
                 </div>
-                <h3 class="portfolio__name">"${project.title}"</h3>
+                <h3 class="portfolio__name">${project.title}</h3>
                 <article class="portfolio__des">
                     <p class="port__par">
-                        "${project.description}"
+                        ${project.description}
                     </p>
                 </article>
                 <div class="tool__con">
-                    "${technology}"
+                    ${technology}
                 </div>
 
                 <div class="view__link">
-                    <a class="btn__view" href="${project.link}"><i class="fa-solid fa-bullseye"></i>Go live</a>
+                    <a class="btn__view" href=${project.link}><i class="fa-solid fa-bullseye"></i>Go live</a>
                 </div>
             </div>
     `;
