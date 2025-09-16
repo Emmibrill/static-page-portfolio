@@ -1,6 +1,8 @@
 
 const myServicesCon = document.querySelector(".all_services");
+console.log(myServicesCon)
 const frontendToolsWrapper = document.querySelector("#frontend");
+
 
 // Function to load external HTML into a container
 async function loadHeaderFooter(id, file) {
@@ -269,6 +271,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //display services
 
+document.addEventListener("DOMContentLoaded", () => {
+ if (myServicesCon) {
+  showServices();
+  ScrollReveal({
+    reset: true,
+    distance: "3rem",
+    duration: 1200,
+    easing: "ease-in-out",
+    mobile: true,
+    cleanup: true,
+    viewFactor: 0.2,
+  });
+
+  ScrollReveal().reveal(".all_services .service_con", {
+    delay: 150,
+    origin: "bottom",
+    interval: 150,
+  });
+}
+
+const activeService = document.querySelectorAll(".service_con");
+if (activeService) {
+  showActiveCard(activeService);
+}
+
+});
+
 function showServices() {
   let myServices = "";
   let ser = [
@@ -316,18 +345,10 @@ function showServices() {
   myServicesCon.innerHTML = myServices;
 }
 
-if (myServicesCon) {
-  showServices();
-}
 
-const activeService = document.querySelectorAll(".service_con");
-if (activeService) {
-  showActiveCard(activeService);
-}
 
 function borderOnTool() {
   const allService = document.querySelectorAll(".service_con");
-  console.log(allService);
   if (!allService || allService.length === 0) return;
   allService[0].classList.add("active");
 }
@@ -338,10 +359,10 @@ function showActiveCard(cards) {
     c.addEventListener("click", () => {
       cards.forEach((c) => {
         c.classList.remove("active");
-        c.style.border = "none";
+        // c.style.border = "none";
       });
       c.classList.add("active");
-      c.style.border = "1px solid #0ff";
+      // c.style.border = "1px solid #0ff";
     });
   });
 }
@@ -616,9 +637,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const showProjects = () => {
   const projectCon = document.querySelector(".portfolio__con");
-  console.log(projectCon);
   if (!projectCon) return;
-
   let Project = "";
   const projectsData = [
     {
@@ -677,6 +696,10 @@ const showProjects = () => {
   });
 
   projectCon.innerHTML = Project;
+  const eachProject = Array.from(projectCon.children);
+  showActiveCard(eachProject);
   projectCon.scrollIntoView({ behavior: "smooth" });
 };
 showProjects();
+
+
