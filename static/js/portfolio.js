@@ -359,9 +359,13 @@ function showActiveCard(cards) {
       cards.forEach((c) => {
         c.classList.remove("active");
         c.style.border = "none";
+        c.style.transform = "scale(0.99)";
+        c.style.transition = "ease-in .9s";
       });
       c.classList.add("active");
       c.style.border = "1px solid #0ff";
+      c.style.transform = "scale(1.01)";
+      c.style.transition = "ease-out .5s";
     });
   });
 }
