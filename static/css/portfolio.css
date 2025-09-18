@@ -684,7 +684,9 @@ footer {
     padding-right: .6rem;
     color: var(--mobile-nav-text-color);
 }
-
+.portfolio{
+    visibility: hidden;
+}
 
 /*contact section*/
 /*contact form*/

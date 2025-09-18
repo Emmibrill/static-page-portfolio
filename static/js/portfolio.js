@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
     activeService[0].classList.add("active");
   }
   borderAroundCard();
-  
+
 });
 
 
@@ -697,6 +697,23 @@ const showProjects = () => {
   projectCon.innerHTML = Project;
   const eachProject = Array.from(projectCon.children);
   showActiveCard(eachProject);
+
+    ScrollReveal({
+      reset: true,
+      distance: "3rem",
+      duration: 1200,
+      easing: "ease-in",
+      mobile: true,
+      cleanup: true,
+      viewFactor: 0.2,
+    });
+
+    ScrollReveal().reveal(".portfolio", {
+      delay: 100,
+      origin: "left",
+      interval: 150,
+      scale: 0.8,
+    });
   projectCon.scrollIntoView({ behavior: "smooth" });
 };
 showProjects();
