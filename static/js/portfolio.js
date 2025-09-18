@@ -1,6 +1,5 @@
 
 const myServicesCon = document.querySelector(".all_services");
-console.log(myServicesCon)
 const frontendToolsWrapper = document.querySelector("#frontend");
 
 
@@ -272,97 +271,97 @@ document.addEventListener("DOMContentLoaded", () => {
 //display services
 
 document.addEventListener("DOMContentLoaded", () => {
- if (myServicesCon) {
-  showServices();
-  ScrollReveal({
-    reset: true,
-    distance: "3rem",
-    duration: 1200,
-    easing: "ease-in-out",
-    mobile: true,
-    cleanup: true,
-    viewFactor: 0.2,
-  });
 
-  ScrollReveal().reveal(".all_services .service_con", {
-    delay: 150,
-    origin: "bottom",
-    interval: 150,
-  });
-}
+  function showServices() {
+    let myServices = "";
+    let serviceData = [
+      {
+        serviceIcon: '<i class="fa-solid fa-mobile"></i>',
+        serviceName: "mobile friendly layout",
+        servicePar: `For a seamless and productive user experience, 
+                    having a mobile-responsive website is absolutely 
+                    necessary. This is one area I do not shirk from`,
+      },
+      {
+        serviceIcon: '<i class="fa-solid fa-laptop"></i>',
+        serviceName: "web development",
+        servicePar: `creation, development, and management of websites 
+                          and online applications while implementing best practices 
+                          for coding and providing clear documentation`,
+      },
+      {
+        serviceIcon: '<i class="fa-solid fa-gears"></i>',
+        serviceName: "Back-End Development",
+        servicePar: `I create and maintain website and web App functionality 
+                          when users request information or when website needs to relate 
+                          to another part of the web architecture`,
+      },
+    ];
 
-const activeService = document.querySelectorAll(".service_con");
-if (activeService) {
-  showActiveCard(activeService);
-}
+    serviceData.forEach((service) => {
+      myServices += `
+      <div class="service_con">
+              <div class="icon_con">
+                  ${service.serviceIcon}
+              </div>
+              <div class="ser_wrtup">
+                  <h2 class="ser_wrtup-txt">${service.serviceName}</h2>
+              </div>
+              <div class="ser_par">
+                  <p class="ser_par-wrtup">
+                      ${service.servicePar} 
+                  </p>
+              </div>
+                      
+          </div>
+        `;
+    });
+    myServicesCon.innerHTML = myServices;
+  }
 
+  if (myServicesCon) {
+    showServices();
+    ScrollReveal({
+      reset: true,
+      distance: "3rem",
+      duration: 1200,
+      easing: "ease-in-out",
+      mobile: true,
+      cleanup: true,
+      viewFactor: 0.2,
+    });
+
+    ScrollReveal().reveal(".all_services .service_con", {
+      delay: 150,
+      origin: "bottom",
+      interval: 150,
+    });
+  }
+
+  const activeService = document.querySelectorAll(".service_con");
+  if (activeService) {
+    showActiveCard(activeService);
+  }
+
+  function borderAroundCard() {
+    if (!activeService || activeService.length === 0) return;
+    activeService[0].classList.add("active");
+  }
+  borderAroundCard();
+  
 });
 
-function showServices() {
-  let myServices = "";
-  let ser = [
-    {
-      serviceIcon: '<i class="fa-solid fa-mobile"></i>',
-      serviceName: "mobile friendly layout",
-      servicePar: `For a seamless and productive user experience, 
-                  having a mobile-responsive website is absolutely 
-                  necessary. This is one area I do not shirk from`,
-    },
-    {
-      serviceIcon: '<i class="fa-solid fa-laptop"></i>',
-      serviceName: "web development",
-      servicePar: `creation, development, and management of websites 
-                        and online applications while implementing best practices 
-                        for coding and providing clear documentation`,
-    },
-    {
-      serviceIcon: '<i class="fa-solid fa-gears"></i>',
-      serviceName: "Back-End Development",
-      servicePar: `I create and maintain website and web App functionality 
-                        when users request information or when website needs to relate 
-                        to another part of the web architecture`,
-    },
-  ];
 
-  ser.forEach((s) => {
-    myServices += `
-    <div class="service_con">
-            <div class="icon_con">
-                ${s.serviceIcon}
-            </div>
-            <div class="ser_wrtup">
-                <h2 class="ser_wrtup-txt">${s.serviceName}</h2>
-            </div>
-            <div class="ser_par">
-                <p class="ser_par-wrtup">
-                    ${s.servicePar} 
-                </p>
-            </div>
-                    
-        </div>
-      `;
-  });
-  myServicesCon.innerHTML = myServices;
-}
-
-
-
-function borderOnTool() {
-  const allService = document.querySelectorAll(".service_con");
-  if (!allService || allService.length === 0) return;
-  allService[0].classList.add("active");
-}
-borderOnTool();
 
 function showActiveCard(cards) {
   cards.forEach((c) => {
     c.addEventListener("click", () => {
       cards.forEach((c) => {
         c.classList.remove("active");
-        // c.style.border = "none";
+        c.style.border = "none";
       });
       c.classList.add("active");
-      // c.style.border = "1px solid #0ff";
+      c.style.border = "1px solid #0ff";
     });
   });
 }
