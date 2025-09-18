@@ -710,7 +710,7 @@ const showProjects = () => {
 
     ScrollReveal().reveal(".portfolio", {
       delay: 100,
-      origin: "left",
+      origin: "center",
       interval: 150,
       scale: 0.8,
     });
