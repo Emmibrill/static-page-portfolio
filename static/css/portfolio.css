@@ -1395,14 +1395,12 @@ footer {
 }
 
 /*class active*/
-/* .active{
-    transform:translateY(-3px);
+.active{    
     box-shadow:0 1rem 2rem  rgba(14, 13, 13, .5);
     transform: scale(1.01);
-    border: 1px solid rgb(71, 144, 116);
-    transition: ease-out .4s;
-   
-} */
+    /* border: 1px solid rgb(71, 144, 116); */
+    border: 1px solid #0ff;
+}
 
 .icon_con{
     position: relative;

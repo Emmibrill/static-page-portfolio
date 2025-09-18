@@ -696,6 +696,7 @@ const showProjects = () => {
 
   projectCon.innerHTML = Project;
   const eachProject = Array.from(projectCon.children);
+  eachProject[0].classList.add("active");
   showActiveCard(eachProject);
 
     ScrollReveal({
