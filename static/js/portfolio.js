@@ -711,9 +711,10 @@ const showProjects = () => {
 
     ScrollReveal().reveal(".portfolio", {
       delay: 100,
-      origin: "center",
+      // origin: "center",
       interval: 150,
       scale: 0.8,
+      opacity: 0,
     });
   projectCon.scrollIntoView({ behavior: "smooth" });
 };
