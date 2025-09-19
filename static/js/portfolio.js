@@ -3,6 +3,11 @@ const myServicesCon = document.querySelector(".all_services");
 const frontendToolsWrapper = document.querySelector("#frontend");
 
 
+window.addEventListener('load', () => {
+    document.querySelector('.preloader').style.display = 'none'  
+})
+
+
 // Function to load external HTML into a container
 async function loadHeaderFooter(id, file) {
   const response = await fetch(file);

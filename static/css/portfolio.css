@@ -96,6 +96,61 @@ body {
     height: 100%;
     background: var(--bg-color-nav);
 }
+
+/*preloader*/
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 9999;
+    perspective: 800px;
+}
+.ring{
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    /*background-color: var(--bg-color);*/
+    
+}
+.preloader .ring:nth-child(1){
+    border-top: 7px solid blue;
+    transform: rotateX(30deg) rotateY(300deg);
+    animation: rotateFirst 1s linear infinite;
+}
+.ring:nth-child(2){
+    border-left: 7px solid green;
+    transform: rotateX(110deg) rotateY(10deg);
+    animation: rotateSecond 1s linear infinite;
+}
+.ring:nth-child(3){
+    border-bottom: 7px solid red;
+    transform: rotateX(25deg) rotateY(55deg);
+    animation: rotateThird 1s linear infinite;
+}
+@keyframes rotateFirst {
+    to{
+        transform: rotateX(30deg) rotateY(300deg) rotateZ(360deg);
+    }
+}
+@keyframes rotateSecond {
+    to{
+        transform: rotateX(110deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+@keyframes rotateThird {
+    to{
+        transform: rotateX(25deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+
 #particles-js {
       position: fixed;
       top: 0;
