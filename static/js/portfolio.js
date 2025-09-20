@@ -109,6 +109,45 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
+//function to ask the user to decide which page to explore
+const explore = document.querySelector(".home_intro-btn");
+const choosePageToExplore = () => {
+  if(!explore) return;
+  const promptBox = document.querySelector(".choose_page_wrapper");
+  const urls =[
+      "about.html",
+      "portfolio.html"
+    ]
+  explore.addEventListener("click", () => {
+    promptBox.classList.add("open")
+  });
+
+
+  const removePromptBoxAndRedirect = () => {
+    const exploreBtn = promptBox.querySelectorAll(".prompt_btn button");
+
+    exploreBtn.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        promptBox.classList.remove("open");
+
+        promptBox.addEventListener("transitionend", () => {
+          window.location.href = urls[i];
+        }, {once: true})
+      });
+    });
+   
+  }
+  removePromptBoxAndRedirect()
+  
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  choosePageToExplore();
+ 
+});
+
+
+
 const inputs = document.querySelectorAll(".input");
 inputs.forEach((input) => {
   input.addEventListener("focus", addfocus);
