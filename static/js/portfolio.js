@@ -689,7 +689,7 @@ const showProjects = () => {
   const projectsData = [
     {
       title: "Project 1",
-      image: "static/images/brills-avatar.png",
+      video: "static/videos/portfolio_ready.mp4",
       description: "Description for Project 1",
       technologies: [
         { technology: "HTML" },
@@ -700,7 +700,7 @@ const showProjects = () => {
     },
     {
       title: "Project 2",
-      image: "static/images/brills-avatar.png",
+      video: "static/videos/portfolio_ready.mp4",
       description: "Description for Project 2",
       technologies: [
         { technology: "Python" },
@@ -723,7 +723,9 @@ const showProjects = () => {
     Project += `
       <div class="portfolio">
                 <div class="port-image__con">
-                    <img class="port__image" src=${project.image} alt=${project.title}>
+                  <video class="port__image" autoplay muted loop playsinline disablepictureinpicture>
+                    <source src=${project.video} type="video/mp4">
+                  </video>
                 </div>
                 <h3 class="portfolio__name">${project.title}</h3>
                 <article class="portfolio__des">
