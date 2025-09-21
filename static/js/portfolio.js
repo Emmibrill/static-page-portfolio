@@ -700,7 +700,7 @@ const showProjects = () => {
     },
     {
       title: "Project 2",
-      video: "static/videos/portfolio_ready.mp4",
+      video: "static/videos/catalogue_ready.mp4",
       description: "Description for Project 2",
       technologies: [
         { technology: "Python" },
