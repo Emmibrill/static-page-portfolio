@@ -689,7 +689,10 @@ const showProjects = () => {
   const projectsData = [
     {
       title: "Project 1",
-      video: "static/videos/portfolio_ready.mp4",
+      video: [
+      { src: "static/videos/catalogue.webm", type: "video/webm" },
+      { src: "static/videos/catalogue-safari-fallback.mp4", type: "video/mp4" }
+      ],
       description: "Description for Project 1",
       technologies: [
         { technology: "HTML" },
@@ -700,7 +703,10 @@ const showProjects = () => {
     },
     {
       title: "Project 2",
-      video: "static/videos/catalogue_ready.mp4",
+      video: [
+      { src: "static/videos/joamgroup.webm", type: "video/webm" },
+      { src: "static/videos/joamgroup-safari-fallback.mp4", type: "video/mp4" }
+      ],
       description: "Description for Project 2",
       technologies: [
         { technology: "Python" },
@@ -709,7 +715,49 @@ const showProjects = () => {
       ],
       link: "https://example.com/project2",
     },
-    // Add more projects as needed
+    {
+      title: "Project 3",
+      video: [
+      { src: "static/videos/Ecommerce.webm", type: "video/webm" },
+      { src: "static/videos/Ecommerce-safari-fallback.mp4", type: "video/mp4" }
+      ],
+      description: "Description for Project 3",
+      technologies: [
+        { technology: "HTML" },
+        { technology: "CSS" },
+        { technology: "JavaScript" },
+      ],
+      link: "https://example.com/project1",
+    },
+    {
+      title: "Project 4",
+      video: [
+      { src: "static/videos/space-tourism.webm", type: "video/webm" },
+      { src: "static/videos/space-tourism-safari-fallback.mp4", type: "video/mp4" }
+      ],
+      description: "Description for Project 4",
+      technologies: [
+        { technology: "HTML" },
+        { technology: "CSS" },
+        { technology: "JavaScript" },
+      ],
+      link: "https://example.com/project1",
+    },
+    {
+      title: "Project 5",
+      video: [
+      { src: "static/videos/bookmark-master.webm", type: "video/webm" },
+      { src: "static/videos/bookmark-master-safari-fallback.mp4", type: "video/mp4" }
+      ],
+      description: "Description for Project 5",
+      technologies: [
+        { technology: "HTML" },
+        { technology: "CSS" },
+        { technology: "JavaScript" },
+      ],
+      link: "https://example.com/project1",
+    },
+   
   ];
   // Loop through your projects data and create HTML for each project
   projectsData.forEach((project) => {
@@ -720,11 +768,17 @@ const showProjects = () => {
         <div class="tool">${tech.technology}</div>
       `;
     });
+
+      // Build video sources (WebM + MP4 fallback)
+    let videoSources = "";
+    project.video.forEach((vid) => {
+      videoSources += `<source src=${vid.src} type=${vid.type}>`;
+    });
     Project += `
       <div class="portfolio">
                 <div class="port-image__con">
                   <video class="port__image" autoplay muted loop playsinline disablepictureinpicture>
-                    <source src=${project.video} type="video/mp4">
+                    ${videoSources}
                   </video>
                 </div>
                 <h3 class="portfolio__name">${project.title}</h3>
