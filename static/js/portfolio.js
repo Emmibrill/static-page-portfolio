@@ -772,7 +772,7 @@ const showProjects = () => {
       // Build video sources (WebM + MP4 fallback)
     let videoSources = "";
     project.video.forEach((vid) => {
-      videoSources += `<source src=${vid.src} type=${vid.type}>`;
+      videoSources += `<source data-src=${vid.src} type=${vid.type}>`;
     });
     Project += `
       <div class="portfolio">
@@ -799,6 +799,34 @@ const showProjects = () => {
   });
 
   projectCon.innerHTML = Project;
+
+  // Lazy load videos with Intersection Observer
+document.addEventListener("DOMContentLoaded", () => {
+  const lazyVideos = document.querySelectorAll("video");
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        const sources = video.querySelectorAll("source");
+        console.log(sources)
+
+        sources.forEach(source => {
+          if (source.dataset.src) {
+            source.src = source.dataset.src;
+            source.removeAttribute("data-src");
+          }
+        });
+
+        video.load(); // force reload with real sources
+        obs.unobserve(video);
+      }
+    });
+  });
+
+  lazyVideos.forEach(video => observer.observe(video));
+});
+  
   const eachProject = Array.from(projectCon.children);
   eachProject[0].classList.add("active");
   showActiveCard(eachProject);
