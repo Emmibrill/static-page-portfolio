@@ -4,12 +4,14 @@ const frontendToolsWrapper = document.querySelector("#frontend");
 
 
 window.addEventListener('load', () => {
+  if(!document.querySelector('.preloader')) return
     document.querySelector('.preloader').style.display = 'none'  
 })
 
 
 // Function to load external HTML into a container
 async function loadHeaderFooter(id, file) {
+  if(!document.getElementById(id)) return
   const response = await fetch(file);
   if (!response.ok) throw new Error("Network response was not ok");
   const data = await response.text();
@@ -17,6 +19,7 @@ async function loadHeaderFooter(id, file) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  if(!document.getElementById("header-container") || !document.getElementById("footer-container")) return;
 
   await loadHeaderFooter("header-container", "template/header.html");
   await loadHeaderFooter("footer-container", "template/footer.html");
@@ -178,26 +181,56 @@ function formValidator() {
   validateOnChange();
   validateOnEntry();
 }
+
+(function(){
+  if(!form) return; // Ensure form exists
+
+   // Initialize EmailJS once with EmailJS public key
+    emailjs.init("xJakKVo00PV0OpCQB"); //public key
+})();
+
 //validates form on submit
 function validateOnSubmit() {
   if (!form) return; // Ensure form exists
 
   // Add a submit event listener to the form
   form.addEventListener("submit", (e) => {
+
+    // Prevent default form submission
+    e.preventDefault(); 
+
+    // Validate each field and track overall form validity
     let formIsValid = true;
     fields.forEach((field) => {
       if (!validateFields(field)) {
         formIsValid = false;
       }
     });
+
     // If any field is invalid, prevent form submission
     if (!formIsValid) {
-      e.preventDefault();
-    } else {
-      return true;
+      return;
     }
+
+
+    // If all fields are valid, proceed with form submission
+    // Send the form data using EmailJS
+    // Get the user's name for personalized thank-you message
+
+    let userName = document.getElementById("name").value;
+
+    emailjs.sendForm("service_bispq2j", "template_5oq6b5r", form) //service ID and template ID
+      .then(() => {
+        // Redirect with query param to thank-you page and pass the name in the URL 
+        window.location.href = `thank-you.html?name=${encodeURIComponent(userName)}`;
+      }, (err) => {
+        console.error("Failed:", err);
+      });
+   
+
   });
 }
+
 //validates form on entry
 function validateOnEntry() {
   fields.forEach((field) => {

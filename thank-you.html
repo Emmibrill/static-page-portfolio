@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="static/css/portfolio.css">
+    <script src="static/js/portfolio.js " defer></script>
+    <script type="module" src="static/js/module.js" defer></script>
+    <title>thank-you</title>
+</head>
+<body class="thankYouBody">
+    <div class="thankYouContainer">
+        <div class="thankYou">
+            <div class="icon_container">
+                <!-- <i class="fa-solid fa-check"></i> -->
+                <canvas class="lottie" id="thank-you_sent" data-src="https://lottie.host/13e55982-04b6-4e5e-bfac-889fefc41ddc/hFqf5twg5h.lottie"></canvas>
+
+            </div>
+            <div class="thank_you-par">
+                <p>thank you <span class="visitors_name"></span> for reaching out!</p>
+                <p>your message has been sent successfully.</p>
+              
+                <p>I appreciate you taking the time to explore my work.</p>
+            
+                <p>New project will be uploaded soon! </p>
+            
+                
+            <p>I'll be in touch shortly</p>
+            </div>
+
+            <a href="index.html" class="redirectButton">back to home</a>
+        </div>
+    
+    </div>
+
+    <script>
+    // Get the name from URL parameters
+
+    let params = new URLSearchParams(window.location.search);
+    let name = params.get("name");
+
+    // Show personalized message
+    const visitorsNameElement = document.querySelector(".visitors_name");
+    if (visitorsNameElement && name) {
+        visitorsNameElement.textContent = name;
+    }
+    
+    // If no name provided, hide the span
+    // else if (visitorsNameElement) {
+    //     visitorsNameElement.style.display = "none";
+    // }
+    </script>
+    
+
+    
+</body>
+</html>
