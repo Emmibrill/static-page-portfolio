@@ -2,6 +2,8 @@
 const myServicesCon = document.querySelector(".all_services");
 const frontendToolsWrapper = document.querySelector("#frontend");
 
+const windowDetails = navigator.userAgent || window.opera;
+console.log(windowDetails)
 
 window.addEventListener('load', () => {
   if(!document.querySelector('.preloader')) return
@@ -720,11 +722,12 @@ const showProjects = () => {
   if (!projectCon) return;
   let Project = "";
   const projectsData = [
+
     {
       title: "Project 1",
       video: [
-      { src: "static/videos/catalogue.webm", type: "video/webm" },
-      { src: "static/videos/catalogue-safari-fallback.mp4", type: "video/mp4" }
+      { src: "static/videos/stopwatch-app.webm", type: "video/webm" },
+      { src: "static/videos/stopwatch-app-safari-fallback.mp4", type: "video/mp4" }
       ],
       description: "Description for Project 1",
       technologies: [
@@ -734,27 +737,14 @@ const showProjects = () => {
       ],
       link: "https://example.com/project1",
     },
+
     {
       title: "Project 2",
       video: [
-      { src: "static/videos/joamgroup.webm", type: "video/webm" },
-      { src: "static/videos/joamgroup-safari-fallback.mp4", type: "video/mp4" }
+      { src: "static/videos/catalogue.webm", type: "video/webm" },
+      { src: "static/videos/catalogue-safari-fallback.mp4", type: "video/mp4" }
       ],
       description: "Description for Project 2",
-      technologies: [
-        { technology: "Python" },
-        { technology: "Django" },
-        
-      ],
-      link: "https://example.com/project2",
-    },
-    {
-      title: "Project 3",
-      video: [
-      { src: "static/videos/Ecommerce.webm", type: "video/webm" },
-      { src: "static/videos/Ecommerce-safari-fallback.mp4", type: "video/mp4" }
-      ],
-      description: "Description for Project 3",
       technologies: [
         { technology: "HTML" },
         { technology: "CSS" },
@@ -762,11 +752,27 @@ const showProjects = () => {
       ],
       link: "https://example.com/project1",
     },
+
+    {
+      title: "Project 3",
+      video: [
+      { src: "static/videos/joamgroup.webm", type: "video/webm" },
+      { src: "static/videos/joamgroup-safari-fallback.mp4", type: "video/mp4" }
+      ],
+      description: "Description for Project 3",
+      technologies: [
+        { technology: "Python" },
+        { technology: "Django" },
+        
+      ],
+      link: "https://example.com/project2",
+    },
+
     {
       title: "Project 4",
       video: [
-      { src: "static/videos/space-tourism.webm", type: "video/webm" },
-      { src: "static/videos/space-tourism-safari-fallback.mp4", type: "video/mp4" }
+      { src: "static/videos/Ecommerce.webm", type: "video/webm" },
+      { src: "static/videos/Ecommerce-safari-fallback.mp4", type: "video/mp4" }
       ],
       description: "Description for Project 4",
       technologies: [
@@ -776,13 +782,29 @@ const showProjects = () => {
       ],
       link: "https://example.com/project1",
     },
+
     {
       title: "Project 5",
+      video: [
+      { src: "static/videos/space-tourism.webm", type: "video/webm" },
+      { src: "static/videos/space-tourism-safari-fallback.mp4", type: "video/mp4" }
+      ],
+      description: "Description for Project 5",
+      technologies: [
+        { technology: "HTML" },
+        { technology: "CSS" },
+        { technology: "JavaScript" },
+      ],
+      link: "https://example.com/project1",
+    },
+
+    {
+      title: "Project 6",
       video: [
       { src: "static/videos/bookmark-master.webm", type: "video/webm" },
       { src: "static/videos/bookmark-master-safari-fallback.mp4", type: "video/mp4" }
       ],
-      description: "Description for Project 5",
+      description: "Description for Project 6",
       technologies: [
         { technology: "HTML" },
         { technology: "CSS" },
@@ -834,31 +856,31 @@ const showProjects = () => {
   projectCon.innerHTML = Project;
 
   // Lazy load videos with Intersection Observer
-document.addEventListener("DOMContentLoaded", () => {
-  const lazyVideos = document.querySelectorAll("video");
+  document.addEventListener("DOMContentLoaded", () => {
+    const lazyVideos = document.querySelectorAll("video");
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const video = entry.target;
-        const sources = video.querySelectorAll("source");
-        console.log(sources)
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const video = entry.target;
+          const sources = video.querySelectorAll("source");
+          console.log(sources)
 
-        sources.forEach(source => {
-          if (source.dataset.src) {
-            source.src = source.dataset.src;
-            source.removeAttribute("data-src");
-          }
-        });
+          sources.forEach(source => {
+            if (source.dataset.src) {
+              source.src = source.dataset.src;
+              source.removeAttribute("data-src");
+            }
+          });
 
-        video.load(); // force reload with real sources
-        obs.unobserve(video);
-      }
+          video.load(); // force reload with real sources
+          obs.unobserve(video);
+        }
+      });
     });
-  });
 
-  lazyVideos.forEach(video => observer.observe(video));
-});
+    lazyVideos.forEach(video => observer.observe(video));
+  });
   
   const eachProject = Array.from(projectCon.children);
   eachProject[0].classList.add("active");
