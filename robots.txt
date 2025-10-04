@@ -1,0 +1,24 @@
+# robots.txt for https://emmibrill.netlify.app
+# Created: 2025-10-04
+# Author: Emmanuel Udo
+
+# Allow all search engines full access to your site
+User-agent: *
+
+# Prevent crawling of technical folders and temporary files
+Disallow: /static/js/
+Disallow: /static/css/
+Disallow: /static/images/
+Disallow: /assets/
+Disallow: /tmp/
+Disallow: /node_modules/
+
+# Optional: prevent indexing of development/test pages (if any)
+Disallow: /test/
+Disallow: /drafts/
+
+# Allow everything else
+Allow: /
+
+# Specify the location of your sitemap
+Sitemap: https://emmibrill.netlify.app/sitemap.xml
