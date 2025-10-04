@@ -847,7 +847,7 @@ const showProjects = () => {
                 </div>
 
                 <div class="view__link">
-                    <a class="btn__view" href=${project.link}><i class="fa-solid fa-bullseye"></i>Go live</a>
+                    <a class="btn__view" href=${project.link}><i class="fa-solid fa-bullseye"></i>Live Demo</a>
                 </div>
             </div>
     `;
