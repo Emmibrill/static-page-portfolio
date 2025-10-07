@@ -32,6 +32,7 @@
     inherits: false;
     initial-value: 0deg;
 }
+
 *:root {
 
     --clr-1: #0ff;
@@ -807,6 +808,150 @@ footer {
 .portfolio{
     visibility: hidden;
 }
+
+/* portfolio case study page*/
+.project_description_card{
+            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            background: var(--form-section-bg);
+            border-radius: .6rem; 
+            padding:28px; max-width:980px; 
+            margin:0 auto;
+            box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            gap:20px;
+            align-items:flex-start;
+            background: var(--form-section-bg);
+            box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
+            padding: 1rem;
+        }
+
+        .title{
+            margin:0 0 2rem;
+            font-size:1.4rem;
+            font-weight:600;
+            line-height:1.2;
+            color: var(--mobile-nav-text-color);
+            color: var(--clr-6);
+        }
+            
+        .tagline{
+            margin:6px 0 0 0;
+            color: #9aa4b2;
+            font-size:0.95rem;
+        }
+        .badges{
+            display:flex;
+            gap:8px;
+            flex-wrap:wrap;
+        }
+        .badge{
+            background: var(--form-input-bg-color);
+            padding:6px 10px;
+            border-radius:999px;
+        }
+        .badge_child{
+            background: var(--gradient);
+            color: #9aa4b2;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size:0.9rem;
+            font-weight: bold;
+        }
+        main{
+            display:grid;
+            grid-template-columns:1fr 320px;
+            gap:24px;
+            margin-top:20px;
+        }
+        section{
+            background:transparent;
+        }
+        h3{
+            margin:0 0 8px 0;
+            font-size:1.05rem;
+            color: var(--mobile-nav-text-color);
+        }
+
+        p{
+            color:#d6e6f7;
+            line-height:1.5;
+        }
+        ul{
+            margin:8px 0 16px 20px
+        }
+        .sidebar{
+            background:rgba(255,255,255,0.02);
+            padding:18px;
+            border-radius:10px;
+            height:fit-content
+        }
+        .tech-list{
+            display:flex;
+            flex-wrap:wrap;
+            gap:8px
+        }
+
+        .tech{
+            padding:8px 10px;
+            border-radius:8px;
+            background:rgba(255,255,255,0.02);
+            color: #9aa4b2;
+            font-size:0.9rem
+        }
+        .links{
+            display:flex;
+            gap:10px;
+            margin-top:12px
+        }
+        .btn{
+            padding:10px 14px;
+            border-radius:10px;
+            background: linear-gradient(90deg,#4ade80,#06b6d4);
+            color:#081126;
+            text-decoration:none;
+            font-weight:600
+        }
+
+        .feature{
+            color: #9aa4b2;
+        }
+        .feature_des{
+            color: #9aa4b2;
+            font-size: 0.9rem;
+        }
+        .muted{
+            color: #9aa4b2;
+        }
+        .small{
+            font-size:0.9rem
+        }
+
+        .feature_grid_con{
+            background: var(--form-section-bg);
+            box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5), 0 .5rem 2rem  rgba(14, 13, 13, .5);
+            border-radius: 1rem;
+            padding: 1rem;
+            margin: 2rem 0;
+        }
+            
+        .feature_grid{
+            display:grid;
+            grid-template-columns:repeat(2, minmax(0,1fr));
+            background: var(--form-section-bg);
+            gap: .5rem;
+            padding: 1rem;
+        }
+        .project_casestudy_footer{
+            margin-top: 3rem;
+            padding: 1rem 0;
+            text-align: center;
+            color:  #9aa4b2;
+        }
 
 /*contact section*/
 /*contact form*/

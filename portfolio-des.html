@@ -14,148 +14,28 @@
     <meta name="description" content="{{ONE_LINE_TAGLINE}} | A detailed case study of {{PROJECT_TITLE}}, developed by {{YOUR_NAME}}." />
     <meta name="keywords" content="{{PROJECT_TITLE}}, {{PRIMARY_TECH}}, {{PROJECT_TYPE}}, Portfolio, Case Study, {{YOUR_NAME}}" />
     <meta name="author" content="{{YOUR_NAME}}"/>
-    <style>
-        /* Minimal, professional styling you can adapt or replace with your site CSS */
-        :root{
-        --bg: #0f1724;
-        --card: #0b1220;
-        --muted: #9aa4b2;
-        --accent: linear-gradient(90deg,#4ade80,#06b6d4);
-        --glass: rgba(255,255,255,0.03);
-        --radius: 12px;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-        }
-        body{
-            background:var(--bg); color:#e6eef8; margin:0; padding:32px;
-        }
+    <link rel="shortcut icon" href="static/images/my-avatar.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/portfolio.css"/>
+    <script src="static/js/portfolio.js" defer></script>
+    
 
-        .project-card{
-            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-            border-radius:var(--radius); 
-            padding:28px; max-width:980px; 
-            margin:0 auto;
-            box-shadow:0 8px 30px rgba(2,6,23,0.6);
-        }
-
-        header{
-            display:flex;
-            justify-content:space-between;
-            gap:20px;
-            align-items:flex-start;
-        }
-
-        .title{
-            margin:0;
-            font-size:1.4rem;
-            font-weight:600;
-            line-height:1.2;
-        }
-            
-        .tagline{
-            margin:6px 0 0 0;
-            color:var(--muted);
-            font-size:0.95rem
-        }
-        .badges{
-            display:flex;
-            gap:8px;
-            flex-wrap:wrap;
-        }
-        .badge{
-            background:var(--glass);
-            padding:6px 10px;
-            border-radius:999px;
-            color:var(--muted);
-            font-size:0.85rem
-        }
-        main{
-            display:grid;
-            grid-template-columns:1fr 320px;
-            gap:24px;
-            margin-top:20px
-        }
-        section{
-            background:transparent
-        }
-        h3{
-            margin:0 0 8px 0;
-            font-size:1.05rem
-        }
-        p{
-            color:#d6e6f7;
-            line-height:1.5
-        }
-        ul{
-            margin:8px 0 16px 20px
-        }
-        .sidebar{
-            background:rgba(255,255,255,0.02);
-            padding:18px;
-            border-radius:10px;
-            height:fit-content
-        }
-        .tech-list{
-            display:flex;
-            flex-wrap:wrap;
-            gap:8px
-        }
-
-        .tech{
-            padding:8px 10px;
-            border-radius:8px;
-            background:rgba(255,255,255,0.02);
-            color:var(--muted);
-            font-size:0.9rem
-        }
-        .links{
-            display:flex;
-            gap:10px;
-            margin-top:12px
-        }
-        .btn{
-            padding:10px 14px;
-            border-radius:10px;
-            background:var(--accent);
-            color:#081126;
-            text-decoration:none;
-            font-weight:600
-        }
-        .muted{
-            color:var(--muted)
-        }
-        .small{
-            font-size:0.9rem
-        }
-            
-        .feature-grid{
-            display:grid;
-            grid-template-columns:repeat(2, minmax(0,1fr));
-            gap:10px
-        }
-
-        @media (max-width:880px){
-            main{
-                grid-template-columns:1fr;
-            }
-            .feature-grid{
-                grid-template-columns:1fr;
-            }
-        }
-    </style>
 </head>
 <body>
-<article class="project-card" aria-labelledby="project-title">
+<article class="project_description_card" aria-labelledby="project-title">
 
     <header>
         <div>
-            <h1 id="project-title" class="title">{{PROJECT_TITLE}}</h1>
+            <h1 id="project-title" class="title">Stop watch</h1>
 
-            <div class="tagline">{{ONE_LINE_TAGLINE}}</div>
+            <div class="tagline">A sleek and responsive web stopwatch built for accuracy, speed, and design consistency</div>
 
             <div style="margin-top:10px;" class="badges">
-                <span class="badge">{{ROLE}} — {{DURATION}}</span>
-                <span class="badge">{{PRIMARY_TECH}}</span>
-                <span class="badge">{{PROJECT_TYPE}}</span>
+                <span class="badge"><p class="badge_child">Fullstack Developer</p></span>
+                <span class="badge"><p class="badge_child">HTML • CSS • JavaScript</p></span>
+                <span class="badge"><p class="badge_child">Web App</p></span>
             </div>
 
         </div>
@@ -167,46 +47,81 @@
     </header>
 
     <main>
-        <section>
+        <section class="project-overview">
+
             <h3>Overview</h3>
-            <p class="small">{{OVERVIEW_PARAGRAPH}}</p>
+
+            <p class="small">
+                EmmiStopwatch is a sleek, high-performance stopwatch web app that tracks 
+                time down to the millisecond. Built with HTML, CSS, and JavaScript, 
+                it emphasizes smooth performance, responsiveness, and a modern-inspired 
+                design that enhances user focus and usability.
+            </p>
 
             <h3>Problem / Motivation</h3>
-            <p class="muted small">{{PROBLEM_STATEMENT}}</p>
+            <p class="muted small">
+                This was actually a project exam given by my school, AltSchool Africa.
+                The task was to build a stopwatch that not only worked flawlessly but 
+                also delivered a clean, immersive experience. The goal was to 
+                demonstrate front-end precision, timing accuracy, and responsive 
+                UI behavior while refining my JavaScript event-handling and animation skills.
+            </p>
 
+            <div class="feature_grid_con">
 
-            <h3>Core Features</h3>
-            <div class="feature-grid">
-                <!-- Repeat feature items -->
-                <div>
-                    <strong class="small">Feature 1</strong>
-                    <p class="muted small">{{FEATURE_1_DESC}}</p>
-                </div>
-                <div>
-                    <strong class="small">Feature 2</strong>
-                    <p class="muted small">{{FEATURE_2_DESC}}</p>
-                </div>
-                <div>
-                    <strong class="small">Feature 3</strong>
-                    <p class="muted small">{{FEATURE_3_DESC}}</p>
-                </div>
-                <div>
-                    <strong class="small">Feature 4</strong>
-                    <p class="muted small">{{FEATURE_4_DESC}}</p>
+                <h3>Core Features</h3>
+                <div class="feature_grid">
+                    <!-- Repeat feature items -->
+                    <div>
+                        <strong class="feature">Precise Time Tracking</strong>
+                        <p class="feature_des">
+                            Tracks hours, minutes, seconds, and milliseconds 
+                            in real time using JavaScript’s setInterval() and clearInterval().
+                        </p>
+                    </div>
+                    <div>
+                        <strong class="feature">Interactive Controls</strong>
+                        <p class="feature_des">
+                            Start, pause, lap and reset buttons with intuitive event-driven functionality.
+                        </p>
+                    </div>
+                    <div>
+                        <strong class="feature">Responsive Design</strong>
+                        <p class="feature_des">Fully responsive layout that adapts seamlessly to mobile and desktop screens.</p>
+                    </div>
+                    <div>
+                        <strong class="feature">Smooth UI Transitions</strong>
+                        <p class="feature_des">Smooth transitions and minimal shadows to create a futuristic yet balanced interface.</p>
+                    </div>
                 </div>
             </div>
 
 
             <h3>Technical Implementation</h3>
-            <p class="small muted">{{TECH_IMPLEMENTATION_PARAGRAPH}}</p>
+            <p class="small muted">
+                The core logic uses JavaScript’s setInterval() to increment time values precisely, clearInterval() to stop the timer, 
+                updating the DOM dynamically. CSS gradients and transitions enhance the visual experience, 
+                while Flexbox ensures perfect alignment and spacing across viewports.
+            </p>
 
 
             <h3>Challenges & Learnings</h3>
-            <p class="small muted">{{CHALLENGES_LEARNINGS}}</p>
+            <p class="small muted">
+                Well, one challenge was ensuring that there was no flickering in the millisecond 
+                updates, especially during rapid start/stop actions, causing the container to shift.
+
+                I learned to optimize JavaScript’s interval logic for precision and ensure 
+                accurate resets without time drift. This project also reinforced my 
+                understanding of layout balance, user interface responsiveness, and the importance 
+                of subtle visual cues in functional design.
+            </p>
 
 
             <h3>Outcome & Future Work</h3>
-            <p class="small muted">{{OUTCOME_PARAGRAPH}}</p>
+            <p class="small muted">
+                EmmiStopwatch refined my front-end architecture thinking, 
+                proving how simplicity and precision can coexist in a modern web app. 
+            </p>
 
 
             <div style="margin-top:14px">
@@ -219,17 +134,19 @@
         <aside class="sidebar">
             <h3>Tech Stack</h3>
             <div class="tech-list" style="margin-top:10px">
-                <span class="tech">{{TECH_1}}</span>
-                <span class="tech">{{TECH_2}}</span>
-                <span class="tech">{{TECH_3}}</span>
-                <span class="tech">{{TECH_4}}</span>
+                <span class="tech">HTML5</span>
+                <span class="tech">CSS3</span>
+                <span class="tech">JavaScript</span>
+                <span class="tech">Responsive Design</span>
             </div>
 
 
             <h3 style="margin-top:18px">Quick Facts</h3>
-            <p class="muted small">Role: <strong>{{ROLE}}</strong></p>
-            <p class="muted small">Team: <strong>{{TEAM_SIZE}}</strong></p>
-            <p class="muted small">Time: <strong>{{DURATION}}</strong></p>
+            <p class="muted small">Role: <strong>Fullstack Developer</strong></p>
+            <p class="muted small">Team: <strong>Solo</strong></p>
+            <p class="muted small">Duration: <strong>3 Days</strong></p>
+            <p class="muted small">Tools: <strong>VS Code, Git, GitHub</strong></p>
+            <p class="muted small">Type: <strong>Web App</strong></p>
 
 
             <h3 style="margin-top:14px">Contact</h3>
@@ -238,13 +155,12 @@
                 <a class="btn" href="{{LINKEDIN}}" target="_blank" rel="noopener">LinkedIn</a>
             </div>
 
-            <p class="muted small" style="margin-top:12px">Tip: keep this sidebar short — recruiters skim fast.</p>
         </aside>
     </main>
 
 
-    <footer style="margin-top:18px; text-align:center; color:var(--muted); font-size:0.9rem">
-        <div>Made by <strong>{{YOUR_NAME}}</strong> — <span class="muted">{{SHORT_BLURB}}</span></div>
+    <footer class="project_casestudy_footer">
+        <div>Made by <strong>Emmibrill Udo</strong> - <span class="muted">A passionate Fullstack Developer and Civil Engineer.</span></div>
     </footer>
 </article>
 </body>

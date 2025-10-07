@@ -2,8 +2,8 @@
 const myServicesCon = document.querySelector(".all_services");
 const frontendToolsWrapper = document.querySelector("#frontend");
 
-const windowDetails = navigator.userAgent || window.opera;
-console.log(windowDetails)
+// const windowDetails = navigator.userAgent || window.opera;
+// console.log(windowDetails)
 
 window.addEventListener('load', () => {
   if(!document.querySelector('.preloader')) return
@@ -29,8 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const navToggler = document.querySelector(".hambugger");
   const navList = document.querySelector(".lists");
   const navTabs = document.querySelectorAll(".list__tab");
-  const navTabsPar = document.querySelectorAll(".list");
-
+  
   //activates the navigation bar and controls the hambugger movement
   function activateNavbar() {
     let navState = navToggler.getAttribute("aria-controls");
@@ -691,17 +690,15 @@ function filterTools() {
     toolsTabsData.forEach((tab) => {
       const tabButton = document.createElement("button");
       tabButton.className = "tools_btn";
-      tabButton.dataset.tab = `${tab.category}`;
+      tabButton.dataset.category = `${tab.category}`;
       tabButton.textContent = `${tab.buttonText}`;
-      tabButton.dataset.tab === tab.category;
+
       if (tab.category === activeCategory) {
         tabButton.classList.add("active");
       }
       tabButton.addEventListener("click", () => {
         activeCategory = tab.category;
-        document
-          .querySelectorAll(".tools_btn")
-          .forEach((btn) => btn.classList.remove("active"));
+        document.querySelectorAll(".tools_btn").forEach((btn) => btn.classList.remove("active"));
         tabButton.classList.add("active");
         renderToolsGrid();
       });
@@ -906,5 +903,9 @@ const showProjects = () => {
   projectCon.scrollIntoView({ behavior: "smooth" });
 };
 showProjects();
+
+// portfolio case study template 
+
+
 
 
