@@ -50,6 +50,7 @@
 
     --gradient: linear-gradient(-266deg, var(--clr-6), var(--clr-7));
 
+
     --bg-color-nav: rgb(13, 27, 42);
     --mobile-nav-bg: rgb(31, 42, 60);
     --mobile-nav-text-color: rgb(234, 234, 234);
@@ -290,7 +291,7 @@ body {
 
 
 /* style the footer section*/
-footer {
+.footer_template {
     width: 100%;
     box-shadow: 0;
     left: 0;
@@ -340,17 +341,17 @@ footer {
 }
 
 
-.links {
+.footer_template_links {
     display: flex;
     justify-content: end;
     flex: 0 0 60%;
 }
 
-.links ul li {
+.footer_template_links ul li {
     padding: .4rem;
 }
 
-.links a {
+.footer_template_links a {
     color: var(--mobile-nav-text-color);
 }
 
@@ -758,6 +759,7 @@ footer {
 
 .port__par {
     color: rgb(255 255 255 / .8);
+    text-decoration: underline;
     /*color: #9babb0;*/
     padding: 0.1rem 1rem;
     width: 100%;
@@ -811,147 +813,267 @@ footer {
 
 /* portfolio case study page*/
 .project_description_card{
-            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-            background: var(--form-section-bg);
-            border-radius: .6rem; 
-            padding:28px; max-width:980px; 
-            margin:0 auto;
-            box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
-        }
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    background: var(--form-section-bg);
+    border-radius: .6rem; 
+    padding:28px; 
+    max-width: 61.25rem; 
+    margin:0 auto;
+    box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
+    transition: all .5s ease-in-out;
+}
+.case_study_nav_con{
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 30%;
+}
+.case_study_nav{
+    
+    color: var(--mobile-nav-text-color);
+    text-decoration: underline;
+    text-underline-offset: .5rem;
+    text-decoration-color: #00f;
+    padding: .4rem;
+}
 
-        header{
-            display:flex;
-            justify-content:space-between;
-            gap:20px;
-            align-items:flex-start;
-            background: var(--form-section-bg);
-            box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
-            padding: 1rem;
-        }
+.case_study_header{
+    display:flex;
+    justify-content:space-between;
+    gap:1.2rem;
+    align-items:flex-start;
+    background: var(--form-section-bg);
+    box-shadow: 0 .5rem 2rem  rgba(14, 13, 13, .5);
+    border-radius: 1rem;
+    padding: 1rem;
+}
 
-        .title{
-            margin:0 0 2rem;
-            font-size:1.4rem;
-            font-weight:600;
-            line-height:1.2;
-            color: var(--mobile-nav-text-color);
-            color: var(--clr-6);
-        }
-            
-        .tagline{
-            margin:6px 0 0 0;
-            color: #9aa4b2;
-            font-size:0.95rem;
-        }
-        .badges{
-            display:flex;
-            gap:8px;
-            flex-wrap:wrap;
-        }
-        .badge{
-            background: var(--form-input-bg-color);
-            padding:6px 10px;
-            border-radius:999px;
-        }
-        .badge_child{
-            background: var(--gradient);
-            color: #9aa4b2;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size:0.9rem;
-            font-weight: bold;
-        }
-        main{
-            display:grid;
-            grid-template-columns:1fr 320px;
-            gap:24px;
-            margin-top:20px;
-        }
-        section{
-            background:transparent;
-        }
-        h3{
-            margin:0 0 8px 0;
-            font-size:1.05rem;
-            color: var(--mobile-nav-text-color);
-        }
+.title{
+    margin:0 0 2rem;
+    font-size:1.4rem;
+    font-weight:600;
+    line-height:1.2;
+    color: var(--mobile-nav-text-color);
+    color: var(--clr-6);
+}
+    
+.tagline{
+    margin:6px 0 0 0;
+    color: #9aa4b2;
+    font-size:0.95rem;
+}
+.badges{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+.badge{
+    background: var(--form-input-bg-color);
+    padding:6px 10px;
+    border-radius:999px;
+}
+.badge_child{
+    background: var(--gradient);
+    background: linear-gradient(to right, rgb(130, 101, 215), rgb(68, 215, 61));
+    color: #9aa4b2;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:0.9rem;
+    font-weight: bold;
+}
+#case_study_main{
+    display:grid;
+    grid-template-columns: 1fr 320px;
+    gap:24px;
+    margin-top:20px;
+}
+.project_overview{
+    background:transparent;
+}
 
-        p{
-            color:#d6e6f7;
-            line-height:1.5;
-        }
-        ul{
-            margin:8px 0 16px 20px
-        }
-        .sidebar{
-            background:rgba(255,255,255,0.02);
-            padding:18px;
-            border-radius:10px;
-            height:fit-content
-        }
-        .tech-list{
-            display:flex;
-            flex-wrap:wrap;
-            gap:8px
-        }
+.study_vid_con{
+    margin: 1rem 0;
+    border-radius: 1rem;
+    /* height: 10rem; */
+}
+.study_vid{
+    border-radius: inherit;
+    inset: 0;
+    width: 100%;
+}
 
-        .tech{
-            padding:8px 10px;
-            border-radius:8px;
-            background:rgba(255,255,255,0.02);
-            color: #9aa4b2;
-            font-size:0.9rem
-        }
-        .links{
-            display:flex;
-            gap:10px;
-            margin-top:12px
-        }
-        .btn{
-            padding:10px 14px;
-            border-radius:10px;
-            background: linear-gradient(90deg,#4ade80,#06b6d4);
-            color:#081126;
-            text-decoration:none;
-            font-weight:600
-        }
+h3{
+    margin:0 0 8px 0;
+    font-size:1.05rem;
+    color: var(--mobile-nav-text-color);
+}
 
-        .feature{
-            color: #9aa4b2;
-        }
-        .feature_des{
-            color: #9aa4b2;
-            font-size: 0.9rem;
-        }
-        .muted{
-            color: #9aa4b2;
-        }
-        .small{
-            font-size:0.9rem
-        }
+p{
+    color:#d6e6f7;
+    line-height:1.5;
+}
 
-        .feature_grid_con{
-            background: var(--form-section-bg);
-            box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5), 0 .5rem 2rem  rgba(14, 13, 13, .5);
-            border-radius: 1rem;
-            padding: 1rem;
-            margin: 2rem 0;
-        }
-            
-        .feature_grid{
-            display:grid;
-            grid-template-columns:repeat(2, minmax(0,1fr));
-            background: var(--form-section-bg);
-            gap: .5rem;
-            padding: 1rem;
-        }
-        .project_casestudy_footer{
-            margin-top: 3rem;
-            padding: 1rem 0;
-            text-align: center;
-            color:  #9aa4b2;
-        }
+.side_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.side_con{
+    background:rgba(255,255,255,0.02);
+    padding: 1.2rem;
+    box-shadow: 0 .5rem 2rem  rgba(14, 13, 13, .5);
+    border-radius: 1rem;
+    height:fit-content
+}
+.aside_img_wrapper{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(6rem, 100%), 1fr));
+    gap: 1rem;
+}
+
+.aside_img_con{
+    height: 7rem;
+    display: relative;
+    /* border: 1px solid #9aa4b2; */
+    position: relative;
+    border-radius: .3rem;
+    transition: all 1s ease-in-out;
+}
+.aside_img_con:hover{
+    transform: scale(1.5);
+    z-index: 1;
+}
+
+
+.aside_img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.tech-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px
+}
+
+.tech{
+    position: relative;
+    padding: .5rem .6rem;
+    border-radius: .5rem;
+    background: var(--form-input-bg-color);
+    font-size:0.9rem;
+    font-weight: bold;
+    background:  linear-gradient(-266deg, rgb(91, 128, 197), rgb(64, 27, 152));
+    z-index: 1;
+}
+.tech::before{
+    position: absolute;
+    content: '';
+    inset: .12rem;
+    z-index: -1;
+    background: var(--mobile-nav-bg);
+    border-radius: inherit;
+
+}
+
+.tech_child{
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* color: #9aa4b2; */
+}
+
+.live_demo_btns{
+    display: inline-flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.links{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    gap:10px;
+    margin-top:12px;
+}
+.link_btn{
+    width: 100%;
+    padding: .4rem 1rem;
+    border-radius:10px;
+    background: linear-gradient(90deg,#4ade80,#06b6d4);
+    background: linear-gradient(to right, rgb(8, 182, 213), rgb(166, 86, 246));
+    color: var(--mobile-nav-text-color);
+    text-decoration:none;
+    text-align: center;
+    font-weight:600;
+}
+
+.feature{
+    color: #9aa4b2;
+}
+.feature h4{
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.feature_des{
+    color: #9aa4b2;
+    font-size: 0.9rem;
+}
+.muted{
+    color: #9aa4b2;
+}
+.small{
+    font-size:0.9rem
+}
+
+.feature_grid_con{
+    background: var(--form-section-bg);
+    box-shadow: .5rem .5rem 2rem  rgba(14, 13, 13, .4), -.5rem -.5rem 2rem  rgba(255, 255, 255, .03);
+    box-shadow: 0 .5rem 2rem  rgba(14, 13, 13, .5);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+.overview_con{
+    padding: 1rem;
+    box-shadow: .5rem .5rem 2rem  rgba(14, 13, 13, .4), -.5rem -.5rem 2rem  rgba(255, 255, 255, .03);
+    box-shadow: 0 .5rem 2rem  rgba(14, 13, 13, .5);
+    border-radius: 1rem;   
+}
+.overview_con p, .botton_con p{
+    margin-bottom: 1rem;
+}
+    
+.feature_grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    background: var(--form-section-bg);
+    gap: .5rem;
+    padding: 1rem;
+}
+
+.botton_con{
+    background:rgba(255,255,255,0.02);
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.casestudy_footer{
+    margin-top: 3rem;
+    padding: 1rem 0;
+    text-align: center;
+    color:  #9aa4b2;
+}
 
 /*contact section*/
 /*contact form*/
@@ -1995,12 +2117,12 @@ footer {
         width: 100%;
     }
 
+
     /* contact social */
 
 
   
     /* style footer */
-
 
     .footer_top {
         flex-direction: column;
@@ -2056,6 +2178,91 @@ footer {
 
         width: 2.5rem;
         height: 2.5rem;
+    }
+
+    /* style portfolio case study  */
+    #case_study_main{
+        grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    }
+
+    .case_study_header{
+        flex-direction: column-reverse;
+    }
+    .case_study_nav_con{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .feature_grid{
+        grid-template-columns:repeat(auto-fit, minmax(min(20rem, 100%),1fr));
+    }
+
+    .project_description_card{
+        padding:1rem;
+    }
+
+    .case_study_nav{
+        text-underline-offset: .3rem;
+        font-size: .9rem;
+    }
+
+    .title{
+        margin:1rem 0 2rem;
+        font-weight: bold;
+    }
+        
+    .tagline{
+        margin: 6px 0 0 0;
+        font-size: 1rem;
+    }
+
+    .badge{
+        padding: 6px 15px;
+        border-radius: 1rem;
+    }
+
+    .badge_child{
+        font-size: 0.85rem;
+        font-weight: bold;
+    }
+
+    h3{
+        font-size:1.1rem;
+    }
+
+    .tech{
+        font-size:0.8rem;
+    }
+
+    .link_btn{
+        font-size: .8rem;
+        font-weight:600;
+    }
+
+    .feature h4{
+    font-size: 0.9rem;
+    }
+
+    .feature_des{
+        font-size: 0.8rem;
+    }
+
+    .small{
+        font-size:0.85rem
+    }
+
+
+}
+
+@media (max-width:695px) {
+
+    /* portfolio case study */
+    .live_demo_btns{
+        padding: 0 8rem;
+    }
+
+    .links{
+        width: 50%;
     }
 
 }
@@ -2121,7 +2328,6 @@ footer {
     }
 
 
-
     /*portfolio section*/
     .port-image__con{
         height: 13rem;
@@ -2130,8 +2336,23 @@ footer {
         height: 13rem;
     }
 
-     /*contact section*/
-     .contact__form {
+    
+    /* portfolio case study */
+
+    .project_description_card{
+        padding: .8rem; 
+    }
+
+    .live_demo_btns{
+        padding: 0 1rem;
+    }
+
+    .links{
+        width: 100%;
+    }
+
+    /*contact section*/
+    .contact__form {
         width: 100%;
         padding: 2rem .5rem 1rem;
         margin: 0rem;

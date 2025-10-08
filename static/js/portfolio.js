@@ -726,7 +726,7 @@ const showProjects = () => {
       { src: "static/videos/stopwatch-app.webm", type: "video/webm" },
       { src: "static/videos/stopwatch-app-safari-fallback.mp4", type: "video/mp4" }
       ],
-      description: "Description for Project 1",
+      caseStudyLInk: "portfolio-des.html",
       technologies: [
         { technology: "HTML" },
         { technology: "CSS" },
@@ -741,7 +741,7 @@ const showProjects = () => {
       { src: "static/videos/catalogue.webm", type: "video/webm" },
       { src: "static/videos/catalogue-safari-fallback.mp4", type: "video/mp4" }
       ],
-      description: "Description for Project 2",
+      caseStudyLInk: "portfolio-des.html",
       technologies: [
         { technology: "HTML" },
         { technology: "CSS" },
@@ -756,7 +756,7 @@ const showProjects = () => {
       { src: "static/videos/joamgroup.webm", type: "video/webm" },
       { src: "static/videos/joamgroup-safari-fallback.mp4", type: "video/mp4" }
       ],
-      description: "Description for Project 3",
+      caseStudyLInk: "portfolio-des.html",
       technologies: [
         { technology: "Python" },
         { technology: "Django" },
@@ -771,7 +771,7 @@ const showProjects = () => {
       { src: "static/videos/Ecommerce.webm", type: "video/webm" },
       { src: "static/videos/Ecommerce-safari-fallback.mp4", type: "video/mp4" }
       ],
-      description: "Description for Project 4",
+      caseStudyLInk: "portfolio-des.html",
       technologies: [
         { technology: "HTML" },
         { technology: "CSS" },
@@ -786,7 +786,7 @@ const showProjects = () => {
       { src: "static/videos/space-tourism.webm", type: "video/webm" },
       { src: "static/videos/space-tourism-safari-fallback.mp4", type: "video/mp4" }
       ],
-      description: "Description for Project 5",
+      caseStudyLInk: "portfolio-des.html",
       technologies: [
         { technology: "HTML" },
         { technology: "CSS" },
@@ -801,7 +801,7 @@ const showProjects = () => {
       { src: "static/videos/bookmark-master.webm", type: "video/webm" },
       { src: "static/videos/bookmark-master-safari-fallback.mp4", type: "video/mp4" }
       ],
-      description: "Description for Project 6",
+      caseStudyLInk: "portfolio-des.html",
       technologies: [
         { technology: "HTML" },
         { technology: "CSS" },
@@ -835,9 +835,7 @@ const showProjects = () => {
                 </div>
                 <h3 class="portfolio__name">${project.title}</h3>
                 <article class="portfolio__des">
-                    <p class="port__par">
-                        ${project.description}
-                    </p>
+                    <a class="port__par" href=${project.caseStudyLInk}>Open case study <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </article>
                 <div class="tool__con">
                     ${technology}
