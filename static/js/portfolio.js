@@ -1346,7 +1346,7 @@ const createCaseStudyPage =() => {
       })      
        
       document.head.innerHTML += `
-        <title data-dynamic = true>${con.headProjectTitle} — Project Overview</title>
+        <title data-dynamic = true>${con.headProjectTitle} - Project Overview</title>
 
         <meta data-dynamic = true name="description" content="${con.tagLine} | A detailed case study of ${con.ProjectTitle}, developed by Emmanuel Okokon Udo - Emmibrill." />
         <meta data-dynamic = true name="keywords" content="${con.headProjectTitle}, ${con.PrimaryTech}, ${con.projectType}, Portfolio, Case Study, Emmanuel Okokon Udo - Emmbrill" />

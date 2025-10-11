@@ -816,7 +816,7 @@ body {
     background: var(--form-section-bg);
     border-radius: .6rem; 
     padding:28px; 
-    max-width: 61.25rem; 
+    /* max-width: 61.25rem;  */
     margin:0 auto;
     box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
     transition: all .5s ease-in-out;
