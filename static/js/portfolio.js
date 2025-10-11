@@ -732,7 +732,7 @@ const showProjects = () => {
         { technology: "CSS" },
         { technology: "JavaScript" },
       ],
-      link: "https://example.com/project1",
+      link: "https://emmistopwatch.netlify.app",
     },
 
     {
@@ -762,7 +762,7 @@ const showProjects = () => {
         { technology: "Django" },
         
       ],
-      link: "https://example.com/project2",
+      link: "https://joamgroup.netlify.app",
     },
 
     {
