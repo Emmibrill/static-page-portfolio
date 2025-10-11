@@ -195,7 +195,7 @@ function validateOnSubmit() {
   if (!form) return; // Ensure form exists
 
   // Add a submit event listener to the form
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
 
     // Prevent default form submission
     e.preventDefault(); 
@@ -217,16 +217,21 @@ function validateOnSubmit() {
     // If all fields are valid, proceed with form submission
     // Send the form data using EmailJS
     // Get the user's name for personalized thank-you message
-
+    const formBtn = document.querySelector('.submitform');
     let userName = document.getElementById("name").value;
+    formBtn.disabled = true
+    formBtn.textContent = "Sending...";
 
-    emailjs.sendForm("service_bispq2j", "template_5oq6b5r", form) //service ID and template ID
-      .then(() => {
-        // Redirect with query param to thank-you page and pass the name in the URL 
-        window.location.href = `thank-you.html?name=${encodeURIComponent(userName)}`;
-      }, (err) => {
-        console.error("Failed:", err);
-      });
+     try {
+      await emailjs.sendForm("service_bispq2j", "template_5oq6b5r", form);
+      window.location.href = `thank-you.html?name=${encodeURIComponent(userName)}`;
+    } catch (err) {
+      console.error("Email send failed:", err);
+      alert("Sorry, something went wrong. Please try again.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send";
+    }
    
 
   });
@@ -1220,7 +1225,6 @@ const createCaseStudyPage =() => {
       ]
     }
 
-   
     //another project here
 
   ]
