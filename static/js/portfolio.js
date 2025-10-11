@@ -1068,7 +1068,7 @@ const createCaseStudyPage =() => {
     //project 3
 
     {
-      portfolio: "Project 2",
+      portfolio: "Project 3",
       content: [
         {
           headProjectTitle: "JOAM Group — Agriculture, Real Estate & Education",
