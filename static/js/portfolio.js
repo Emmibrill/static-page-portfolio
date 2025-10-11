@@ -646,7 +646,7 @@ function filterTools() {
     // Clear previous content
     gridContainer.innerHTML = "";
     const filteredTools = toolsData.filter((tool) => tool.category === activeCategory)[0]?.tools || [];
-
+    // console.log(toolsData.filter((tool) => tool.category === activeCategory)[0].tools)
     if (!filteredTools) {
       console.error(`No tools found for category: ${activeCategory}`);
       return;
@@ -859,7 +859,7 @@ const showProjects = () => {
         if (entry.isIntersecting) {
           const video = entry.target;
           const sources = video.querySelectorAll("source");
-          console.log(sources)
+          // console.log(sources)
 
           sources.forEach(source => {
             if (source.dataset.src) {
@@ -903,6 +903,553 @@ const showProjects = () => {
 showProjects();
 
 // portfolio case study template 
+
+
+const createCaseStudyPage =() => {
+
+  let portfolioData = [
+
+    {
+      portfolio: "Project 1",
+      content: [
+      {
+        headProjectTitle: "Stop Watch Web App",
+        tagLine: "A sleek and responsive web stopwatch built for accuracy, speed, and design consistency",
+        ProjectTitle: "Stopwatch",
+        PrimaryTech: "HTML, Css, JavaScript",
+        projectType: "Web App",
+        caseStudyHeader: "Stop watch",
+
+        badgeSet: [
+          {badge: "Fullstack Developer"},
+          {badge: "HTML • CSS • JavaScript"},
+          {badge: "Web App"}
+        ],
+
+        overview: [
+          {
+            title: "Overview",
+            paragraph: `
+              EmmiStopwatch is a sleek, high-performance stopwatch web app that tracks 
+                      time down to the millisecond. Built with HTML, CSS, and JavaScript, 
+                      it emphasizes smooth performance, responsiveness, and a modern-inspired 
+                      design that enhances user focus and usability.
+            `
+          },
+          {
+            title: "Problem / Motivation",
+            paragraph: `
+              This was actually a project exam given by my school, AltSchool Africa.
+                      The task was to build a stopwatch that not only worked flawlessly but 
+                      also delivered a clean, immersive experience. The goal was to 
+                      demonstrate front-end precision, timing accuracy, and responsive 
+                      UI behavior while refining my JavaScript event-handling and animation skills.
+            `
+          }
+        ],
+
+        studyVideo: [
+          {
+            source: "static/videos/stopwatch-case-study-video.webm",
+            type: "video/webm"
+          },
+          {
+            source: "static/videos/stopwatch-case-study-fallback.mp4",
+            type: "video/mp4"
+          }
+        ],
+
+        featureHeading: "Core Features",
+
+        features: [
+          {
+            heading: "Precise Time Tracking",
+            body: `
+              Tracks hours, minutes, seconds, and milliseconds 
+                              in real time using JavaScript’s setInterval() and clearInterval().
+            `
+          },
+          {
+            heading: "Interactive Controls",
+            body: `
+              Start, pause, lap and reset buttons with intuitive event-driven functionality
+            `
+          },
+          {
+            heading: "Responsive Design",
+            body: `
+              Fully responsive layout that adapts seamlessly to mobile and desktop screens.
+            `
+          },
+          {
+            heading: "Smooth UI Transitions",
+            body: `
+              Smooth transitions and minimal shadows to create a futuristic yet balanced interface.
+            `
+          }
+        ],
+
+        bottomPageDetails: [
+          {
+            header: "Technical Implementation",
+            description: `
+              The core logic uses JavaScript’s setInterval() to increment time values precisely, clearInterval() to stop the timer, 
+                      updating the DOM dynamically. CSS gradients and transitions enhance the visual experience, 
+                      while Flexbox ensures perfect alignment and spacing across viewports.
+            `
+          },
+          {
+            header: "Challenges & Learnings",
+            description: `
+              Well, one challenge was ensuring that there was no flickering in the millisecond 
+                      updates, especially during rapid start/stop actions, causing the container to shift.
+
+                      I learned to optimize JavaScript’s interval logic for precision and ensure 
+                      accurate resets without time drift. This project also reinforced my 
+                      understanding of layout balance, user interface responsiveness, and the importance 
+                      of subtle visual cues in functional design.
+            `
+          },
+          {
+            header: "Outcome & Future Work",
+            description: `
+              EmmiStopwatch refined my front-end architecture thinking, 
+                      proving how simplicity and precision can coexist in a modern web app. 
+            `
+          }
+
+        ],
+
+        demoAndSourceBtn: [
+          {url: "https://emmistopwatch.netlify.app", demoBtnTxt: "Live Demo"},
+          {url: "https://github.com/Emmibrill/stopwatch", demoBtnTxt: "Source"}
+        ],
+
+        techStackHeading: "Tech Stack",
+        TechList: [
+          {tech: "HTML5"},
+          {tech: "CSS3"},
+          {tech: "JavaScript"},
+          {tech: "Responsive Design"}
+        ],
+
+        quickFactTitle: "Quick Facts",
+        facts: [
+          {factName: "Role", factDescription: "Fullstack Developer"},
+          {factName: "Team", factDescription: "Solo"},
+          {factName: "Duration", factDescription: "3 Days"},
+          {factName: "Tools", factDescription: "VS Code, Git, GitHub"},
+          {factName: "Type", factDescription: "Web App"},
+        ],
+
+        CaseStudyAsideImg: [
+          {
+            studyImgSrc: "static/images/stopwatch.png",
+            studyImgAlt: "stopwatch"
+          },
+          {
+            studyImgSrc: "static/images/stopwatch-light-mode-record.png",
+            studyImgAlt: "stopwatch-light-mode-record"
+          },
+          {
+            studyImgSrc: "static/images/stopwatch-light-mode.png",
+            studyImgAlt: "stopwatch-light-mode"
+          },
+          {
+            studyImgSrc: "static/images/stopwatch-dark-mode-record.png",
+            studyImgAlt: "stopwatch-dark-mode-record"
+          }
+        ] 
+      },
+
+      ]
+    },
+
+    //project 2
+
+    {
+      portfolio: "Project 2",
+      content: [
+        {
+          headProjectTitle: "JOAM Group — Agriculture, Real Estate & Education",
+          tagLine: "Empowering lives through agriculture, real estate, and education with a focus on sustainability, comfort, and growth.",
+          ProjectTitle: "JOAM Group",
+          PrimaryTech: "HTML, CSS, JavaScript",
+          projectType: "Corporate Website",
+          caseStudyHeader: "JOAM Group",
+
+          badgeSet: [
+            { badge: "Fullstack Developer" },
+            { badge: "HTML • CSS • JavaScript" },
+            { badge: "Corporate Website" }
+          ],
+
+          overview: [
+            {
+              title: "Overview",
+              paragraph: `
+                JOAM Group is a dynamic company with focus areas spanning Agriculture, Real Estate, and Education. 
+                The goal of this project was to design a user-centered, mobile-friendly website that communicates 
+                JOAM’s mission of creating lasting positive impacts through sustainable practices, comfort-driven real estate, 
+                and educational excellence.
+              `
+            },
+            {
+              title: "Problem / Motivation",
+              paragraph: `
+                The client needed a web presence that unified all three divisions of the organization under one cohesive 
+                identity while maintaining distinct pages for each service. The website had to present information clearly 
+                and attractively, helping users easily explore JOAM’s agricultural products, real estate offerings, and educational mission.
+              `
+            }
+          ],
+
+          studyVideo: [
+            {
+              source: "static/videos/joamgroup-preview.webm",
+              type: "video/webm"
+            },
+            {
+              source: "static/videos/joamgroup-preview.mp4",
+              type: "video/mp4"
+            }
+          ],
+
+          featureHeading: "Core Features",
+
+          features: [
+            {
+              heading: "Structured Content Architecture",
+              body: `
+                Each division—Farms, Real Estate, and Education—has dedicated sections 
+                showcasing services, mission, and vision, ensuring easy navigation and clarity.
+              `
+            },
+            {
+              heading: "Responsive Layout",
+              body: `
+                Designed with responsiveness in mind, ensuring seamless performance and 
+                aesthetics across mobile, tablet, and desktop screens.
+              `
+            },
+            {
+              heading: "Modern Visual Design",
+              body: `
+                The design uses consistent branding, modern typography, and balanced white space 
+                to reflect JOAM’s professionalism and reliability.
+              `
+            },
+            {
+              heading: "Accessibility & Readability",
+              body: `
+                Structured headings, semantic HTML, and legible contrasts ensure a comfortable reading 
+                experience and accessibility compliance.
+              `
+            }
+          ],
+
+          bottomPageDetails: [
+            {
+              header: "Technical Implementation",
+              description: `
+                The project was built using semantic HTML5 for structure, CSS3 for styling and responsiveness, 
+                and vanilla JavaScript for smooth DOM interactions. Animations and transitions were used subtly 
+                to maintain focus on the content while giving the interface a professional appeal.
+              `
+            },
+            {
+              header: "Challenges & Learnings",
+              description: `
+                The key challenge was balancing rich content with a lightweight page performance. 
+                Through optimized image handling and modular structuring, load times were reduced 
+                without sacrificing quality. I also learned how to maintain consistent brand identity 
+                across multiple business divisions under one unified theme.
+              `
+            },
+            {
+              header: "Outcome & Future Work",
+              description: `
+                The website successfully presents JOAM Group’s offerings clearly while maintaining a 
+                clean, professional feel. Future updates may include backend integration for content management 
+                and data-driven analytics to monitor user engagement.
+              `
+            }
+          ],
+
+          demoAndSourceBtn: [
+            { url: "https://joamgroup.netlify.app", demoBtnTxt: "Live Demo" },
+            { url: "https://github.com/Emmibrill/joamgroup", demoBtnTxt: "Source" }
+          ],
+
+          techStackHeading: "Tech Stack",
+          TechList: [
+            { tech: "HTML5" },
+            { tech: "CSS3" },
+            { tech: "JavaScript" },
+            { tech: "Responsive Design" }
+          ],
+
+          quickFactTitle: "Quick Facts",
+          facts: [
+            { factName: "Role", factDescription: "Fullstack Developer" },
+            { factName: "Team", factDescription: "Solo" },
+            { factName: "Duration", factDescription: "1 month" },
+            { factName: "Tools", factDescription: "VS Code, Git, Netlify" },
+            { factName: "Type", factDescription: "Corporate Website" }
+          ],
+
+          CaseStudyAsideImg: [
+            {
+              studyImgSrc: "static/images/joamgroup-home.png",
+              studyImgAlt: "joamgroup home page"
+            },
+            {
+              studyImgSrc: "static/images/joamgroup-farms.png",
+              studyImgAlt: "joamgroup farms section"
+            },
+            {
+              studyImgSrc: "static/images/joamgroup-realestate.png",
+              studyImgAlt: "joamgroup real estate section"
+            },
+            {
+              studyImgSrc: "static/images/joamgroup-education.png",
+              studyImgAlt: "joamgroup education section"
+            }
+          ]
+        }
+      ]
+    }
+
+   
+    //another project here
+
+  ]
+
+  //get the stored project title and assign it to a variable
+  const projectTitle = sessionStorage.getItem("projectTitle")
+
+  //set activeCaseStudy to be the target project title
+  let activeCaseStudy = projectTitle;
+  // console.log(activeCaseStudy)
+
+  //dynamically change case study content
+  function updateCaseStudyOnClick()  {
+    const caseStudyProjectBtn = document.querySelectorAll(('.port__par'));
+    if(!caseStudyProjectBtn.length) return;
+    // console.log(caseStudyProjectBtn);
+
+    Array.from(caseStudyProjectBtn).forEach((btn) => {
+      // const parentSiblingTitle = btn.closest('.portfolio').querySelector('.portfolio__name').textContent;
+      // console.log(parentSiblingTitle)
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parentSiblingTitle = e.target.closest('.portfolio').querySelector('.portfolio__name').textContent;
+        if(parentSiblingTitle){
+          sessionStorage.setItem("projectTitle", parentSiblingTitle)
+          window.location.href = e.currentTarget.href
+        }
+        
+      })
+    })
+  }
+
+
+  function renderCaseStudy() {
+    const portfolioCaseStudy = document.querySelector(".portfolio_case_study");
+    // console.log(portfolioCaseStudy)
+
+    //check if the elements exist, if not exit the code
+    if(!portfolioCaseStudy) return;
+    //  console.log(portfolioMarkup);
+
+    //clear meta and div content for each project before rendering
+    document.querySelectorAll('meta[data-dynamic = true]').forEach((data) => data.remove());
+    portfolioCaseStudy.innerHTML = "";
+    
+    let filteredContent = portfolioData.filter((data) => data.portfolio === activeCaseStudy)[0]?.content || [];
+    console.log(filteredContent);
+    
+    if(!filteredContent.length){
+      alert("oops! Sorry no case study at the moment\n Still working on it");
+      return;
+    }
+   
+    filteredContent.forEach((con) => {
+      console.log(con.badgeSet)
+      
+      let caseStudyBadge = '';
+      con.badgeSet.forEach((set) => {
+        caseStudyBadge += `<span class="badge"><p class="badge_child">${set.badge}</p></span>` 
+      })
+
+      let overViewDetails = '';
+      con.overview.forEach((data) => {
+        overViewDetails += `
+          <h3>${data.title}</h3>
+           <p class="small">${data.paragraph}</p>
+          `
+      })
+
+      let caseStudyVideos = '';
+      con.studyVideo.forEach((data) => {
+        caseStudyVideos += `
+          <source src="${data.source}" type="${data.type}">
+          `
+      })
+
+      let featuresData = '';
+      con.features.forEach((data) => {
+        featuresData += `
+          <div>
+            <strong class="feature"><h4>${data.heading}</h4></strong>
+            <p class="feature_des">${data.body}</p>
+          </div>
+        `
+      })
+
+      let bottomPageData = '';
+      con.bottomPageDetails.forEach((data) => {
+        bottomPageData += `
+          <h3>${data.header}</h3>
+          <p class="small muted">${data.description}</p>
+        `
+      })
+
+      let demoAndSourceData = '';
+      con.demoAndSourceBtn.forEach((data) => {
+        demoAndSourceData += `
+         <a class="link_btn" href="${data.url}" target="_blank" rel="noopener">${data.demoBtnTxt}</a> 
+        `
+      })
+
+      let TechListData = '';
+      con.TechList.forEach((data) => {
+        TechListData += `
+          <span class="tech"><p class="tech_child">${data.tech}</p></span>
+        `
+      })
+
+      let factsData = '';
+      con.facts.forEach((data) => {
+        factsData += `
+          <p class="muted small">${data.factName}: <strong>${data.factDescription}</strong></p>
+        `
+      })
+
+      let caseStudyAsideImgData = '';
+      con.CaseStudyAsideImg.forEach((data) => {
+        caseStudyAsideImgData += `
+          <div class="aside_img_con"><img src="${data.studyImgSrc}" alt="${data.studyImgAlt}" class="aside_img"></div>
+        `
+      })      
+       
+      document.head.innerHTML += `
+        <title data-dynamic = true>${con.headProjectTitle} — Project Overview</title>
+
+        <meta data-dynamic = true name="description" content="${con.tagLine} | A detailed case study of ${con.ProjectTitle}, developed by Emmanuel Okokon Udo - Emmibrill." />
+        <meta data-dynamic = true name="keywords" content="${con.headProjectTitle}, ${con.PrimaryTech}, ${con.projectType}, Portfolio, Case Study, Emmanuel Okokon Udo - Emmbrill" />
+
+      `
+     
+      const article = document.createElement('article');
+      article.classList.add('project_description_card');
+      article.setAttribute("aria-labelledby", "project-title");
+      article.innerHTML = `
+        <header class="case_study_header">
+          <div>
+            <h1 id="project-title" class="title">${con.caseStudyHeader}</h1>
+            <div class="tagline">${con.tagLine}</div>
+            <div style="margin-top:10px;" class="badges">
+              ${caseStudyBadge}
+            </div>
+
+          </div>
+
+          <div class="case_study_nav_con" style="text-align:right">
+            <a class="case_study_nav" href="index.html">⟸ back home</a>
+            <a class="case_study_nav" href="about.html">about</a>
+          </div>
+        </header>
+        
+      `
+      portfolioCaseStudy.appendChild(article)
+      console.log(portfolioCaseStudy);
+
+      const main = document.createElement('main')
+      main.id = 'case_study_main';
+      article.appendChild(main);
+
+      const footer = document.createElement('footer');
+      footer.classList.add('casestudy_footer', 'small');
+      footer.innerHTML = `
+        <div>Made by <strong>Emmibrill Udo</strong> - <span class="muted">A passionate Fullstack Developer and Civil Engineer.</span></div>
+      `
+      article.appendChild(footer);
+      
+      const section = document.createElement('section');
+      section.classList.add('project_overview');
+      main.appendChild(section);
+      
+      const sectionWrapper = document.createElement('div');
+      sectionWrapper.innerHTML = `
+        <div class="overview_con"${overViewDetails}</div>
+        <div class="study_vid_con">
+          <video class="study_vid" autoplay muted loop playsinline disablepictureinpicture>
+            ${caseStudyVideos}
+          </video>
+        </div>  
+
+        <div class="feature_grid_con">
+          <h3>${con.featureHeading}</h3>
+          <div class="feature_grid">
+            <!-- feature items -->
+            ${featuresData}
+          </div>
+        </div>
+        <div class="botton_con">${bottomPageData}</div>
+        <div class="live_demo_btns" style="margin-bottom:2rem">${demoAndSourceData}</div>
+
+      `
+      section.appendChild(sectionWrapper);
+      
+      const sideInnerCon = document.createElement('div');
+      sideInnerCon.innerHTML = `
+        <div class="side_wrapper">
+          <aside class="side_con">
+            <h3>${con.techStackHeading}</h3>
+            <div class="tech-list" style="margin-top:10px">${TechListData}</div>
+
+            <h3 style="margin-top:18px">${con.quickFactTitle}</h3>
+            ${factsData}
+
+            <h3 style="margin-top:14px">Contact</h3>
+            <div class="links">
+              <a class="link_btn" href="contact.html">Email</a>
+              <a class="link_btn" href="https://www.linkedin.com/in/emmanuel-udo-97820b235" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </aside>
+
+          <div class="aside_img_wrapper side_con">${caseStudyAsideImgData}</div>
+        </div>
+      `
+      main.appendChild(sideInnerCon)
+      document.body.appendChild(portfolioCaseStudy);
+
+    })
+    
+  }
+
+  updateCaseStudyOnClick()
+  renderCaseStudy();
+ 
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  createCaseStudyPage()
+})
+
+
+
 
 
 

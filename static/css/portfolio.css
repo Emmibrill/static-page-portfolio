@@ -95,7 +95,6 @@
 html,
 body {
     width: 100%;
-    height: 100%;
     background: var(--bg-color-nav);
 }
 
@@ -2646,6 +2645,13 @@ p{
         padding: .6rem 0;
     }
 
+
+    /* about section */
+    .about_img-con {
+        width: 23rem;
+        height: 25rem;
+    }
+
     
     /*contact section*/
 
@@ -2669,6 +2675,13 @@ p{
 }
 
 @media (max-width:395px) {
+
+    /*about section*/
+
+    .about_img-con {
+        width: 22rem;
+        height: 25rem;
+    }
     
      /* style home page prompt box */
     .choose_page_wrapper{
@@ -2687,11 +2700,11 @@ p{
 @media (max-width:375px) {
 
 
-     /*about section*/
+    /*about section*/
 
     .about_img-con {
-        width: 25rem;
-        height: 30rem;
+        width: 20rem;
+        height: 21rem;
     }
 
     .about_img-con>*{
@@ -2706,12 +2719,12 @@ p{
 
 }
 
-@media (max-width:320px) {
+@media (max-width:335px) {
 
        /*about section*/
 
     .about_img-con {
-        width: 18.7rem;
+        width: 18rem;
         height: 21rem;
     }
 
