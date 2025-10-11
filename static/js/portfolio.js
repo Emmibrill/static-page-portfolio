@@ -1065,7 +1065,7 @@ const createCaseStudyPage =() => {
       ]
     },
 
-    //project 2
+    //project 3
 
     {
       portfolio: "Project 2",
