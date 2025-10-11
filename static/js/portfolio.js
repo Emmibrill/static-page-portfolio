@@ -1394,7 +1394,7 @@ const createCaseStudyPage =() => {
       
       const sectionWrapper = document.createElement('div');
       sectionWrapper.innerHTML = `
-        <div class="overview_con"${overViewDetails}</div>
+        <div class="overview_con">${overViewDetails}</div>
         <div class="study_vid_con">
           <video class="study_vid" autoplay muted loop playsinline disablepictureinpicture>
             ${caseStudyVideos}
