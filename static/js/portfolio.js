@@ -1271,7 +1271,9 @@ const createCaseStudyPage =() => {
     
     if(!filteredContent.length){
       alert("oops! Sorry no case study at the moment\n Still working on it");
+      window.location.href = "portfolio.html";
       return;
+      
     }
    
     filteredContent.forEach((con) => {
