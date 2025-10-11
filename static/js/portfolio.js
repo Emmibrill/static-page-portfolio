@@ -1270,7 +1270,7 @@ const createCaseStudyPage =() => {
     console.log(filteredContent);
     
     if(!filteredContent.length){
-      alert("oops! Sorry no case study at the moment\n Still working on it");
+      alert("😊 oops! Sorry no case study at the moment\n Still working on them.\n\n Visit project 1 and 3 OR reach out to Emmibrill Udo ✌️");
       window.location.href = "portfolio.html";
       return;
       
