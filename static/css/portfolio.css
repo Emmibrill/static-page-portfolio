@@ -1649,7 +1649,7 @@ p{
 
 
 /* about section two */
-.about_section-two {
+.about_section-two, .about_section-four {
     display: flex;
     gap: 2rem;
     background: var(--form-section-bg);
@@ -1659,8 +1659,11 @@ p{
     color: var(--mobile-nav-text-color);
     cursor: default;
 }
+.about_section-four{
+    background: linear-gradient(rgba(13, 27, 42, .7), rgba(31, 42, 60, .7)), url(../images/colorful-laptop-wallpaper-and-phone.jpg) left/contain no-repeat;
+}
 
-.civil_engr {
+.civil_engr, .software_engr {
     display: flex;
     flex: 0 0 40%;
     justify-content: right;
@@ -2102,12 +2105,12 @@ p{
         line-height: 1.5rem;
     }
 
-    .about_section-two {
+    .about_section-two, .about_section-four {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(30rem, 100%), 1fr));
     }
 
-    .civil_engr {
+    .civil_engr, .software_engr {
         justify-content: left;
         padding: 0%;
         padding: .5rem;
@@ -2255,6 +2258,11 @@ p{
 }
 
 @media (max-width:695px) {
+    /* about section */
+    .about_section-four{
+    background-position: top;
+    background-size: cover;
+}
 
     /* portfolio case study */
     .live_demo_btns{
@@ -2515,7 +2523,7 @@ p{
         padding-top: 0;
     }
 
-    .about_section-two {
+    .about_section-two, .about_section-four {
         padding: 1rem;
     }
 
