@@ -1714,6 +1714,10 @@ p{
     margin: 0 auto;
     transform: translateY(1.22rem);
 }
+#love .fa-heart{
+    color: red;
+    font-size: 2rem;
+}
 .running_con{
     display: flex;
     align-items: center;
