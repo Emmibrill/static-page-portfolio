@@ -86,7 +86,7 @@
     font-family: 'Comfortaa', cursive;
     font-family: Rajdhani;
 
-    /* ======= Neumorphism Shadows ======= */
+    /*  Neumorphism Shadows */
   --neu-shadow-light: -8px -8px 20px rgba(255, 255, 255, 0.03);
   --neu-shadow-dark: 8px 8px 20px rgba(0, 0, 0, 0.4);
 
@@ -1689,6 +1689,49 @@ p{
     border: 1px solid var(--form-input-bdr-color);
     padding: .2rem;
 }
+.section_five{
+    display: flex;
+    width: 100%;
+    white-space: nowrap;
+    text-wrap: nowrap;
+    height: 6rem;
+    background: var(--mobile-nav-bg);
+    background: rgb(13, 25, 38);
+    color: var(--mobile-nav-text-color);
+    overflow-x: hidden;
+    cursor: pointer;
+    border-top: 1px solid rgb(94, 93, 93);
+    border-bottom: 1px solid rgb(94, 93, 93);
+    z-index: -1;
+}
+#love{
+    display: grid;
+    place-items: center;
+    height: 2.5rem;
+    width: 8rem;
+    background: rgb(13, 25, 38);
+    z-index: 2rem;
+    margin: 0 auto;
+    transform: translateY(1.22rem);
+}
+.running_con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    animation:  scrolling 16s linear infinite;
+}
+.running_con .slideIn{
+    display: flex;
+    padding-inline: 3rem;
+}
+
+
+@keyframes scrolling {
+    0%{transform: translateX(0%);}
+
+    100%{transform: translateX(-100%);}
+}
 
 .work_gallery {
     display: flex;
@@ -2316,7 +2359,7 @@ p{
 
     .home_intro-btn{
         margin-top: 1.2rem;
-        padding: .75rem 5rem;
+        padding: .75rem 4rem;
     }
 
     /* style home page prompt box */
@@ -2630,7 +2673,7 @@ p{
 
     .home_intro-btn{
         margin-top: 1.2rem;
-        padding: .7rem 4rem;
+        padding: .7rem 3rem;
     }
 
     /* style home page prompt box */

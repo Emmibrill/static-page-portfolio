@@ -1454,6 +1454,39 @@ document.addEventListener('DOMContentLoaded', () => {
   createCaseStudyPage()
 })
 
+function slideInAnimation(){
+  const slideInContent = document.querySelectorAll('.slideIn')
+  console.log(slideInContent)
+ 
+   
+  const slideObserver = new IntersectionObserver((entries, obs)  => {
+    entries.forEach(entry => {
+    let status = (!entry.isIntersecting) ? "out of the screen" : "width-in the screen";
+    console.log(status)
+    
+    // obs.unobserve(entry.target)
+    })
+    
+  })
+  
+  for (let slide of slideInContent){ 
+    slide.addEventListener('animationstart', () => {
+       slideObserver.observe(slide)
+    })
+   
+  }
+   
+
+   
+
+  // let screenWidth = window.innerWidth
+  // let slideOffsetX = slide.getBoundingClientRect().left
+  // let diff = screenWidth - slideOffsetX
+  // console.log(`screen width: ${screenWidth}`)
+  // console.log(`slide offset X is: ${slideOffsetX}`)
+  // console.log(`the diff is: ${diff}`)
+}
+slideInAnimation()
 
 
 
