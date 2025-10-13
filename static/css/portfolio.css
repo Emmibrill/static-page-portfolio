@@ -1717,6 +1717,7 @@ p{
 #love .fa-heart{
     color: red;
     font-size: 2rem;
+    animation: heartbeat 3s infinite ease-in-out;
 }
 .running_con{
     display: flex;
@@ -1728,9 +1729,15 @@ p{
 .running_con .slideIn{
     display: flex;
     padding-inline: 3rem;
+    font-weight: bold;
 }
 
-
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(0.9); }
+  75% { transform: scale(1.15); }
+}
 @keyframes scrolling {
     0%{transform: translateX(0%);}
 
