@@ -220,6 +220,7 @@ function validateOnSubmit() {
     const formBtn = document.querySelector('.submitform');
     let userName = document.getElementById("name").value;
     formBtn.disabled = true
+    formBtn.classList.add('submitDisabled')
     formBtn.textContent = "Sending...";
 
      try {
@@ -230,7 +231,8 @@ function validateOnSubmit() {
       alert("Sorry, something went wrong. Please try again.");
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Send";
+      submitBtn.classList.remove('submitDisabled')
+      submitBtn.textContent = "Sent";
     }
    
 
@@ -1232,24 +1234,29 @@ const createCaseStudyPage =() => {
   //get the stored project title and assign it to a variable
   const projectTitle = sessionStorage.getItem("projectTitle")
 
-  //set activeCaseStudy to be the target project title
+  //set activeCaseStudy to be the target project title on click
   let activeCaseStudy = projectTitle;
-  // console.log(activeCaseStudy)
 
-  //dynamically change case study content
+  //dynamically change case study content depending on the project that is being clicked
   function updateCaseStudyOnClick()  {
     const caseStudyProjectBtn = document.querySelectorAll(('.port__par'));
     if(!caseStudyProjectBtn.length) return;
-    // console.log(caseStudyProjectBtn);
 
+    
     Array.from(caseStudyProjectBtn).forEach((btn) => {
-      // const parentSiblingTitle = btn.closest('.portfolio').querySelector('.portfolio__name').textContent;
-      // console.log(parentSiblingTitle)
       btn.addEventListener('click', (e) => {
+
+        //prevent the default action of redirecting to the location in the anchor tag href
         e.preventDefault();
+
+         //for each of the buttons clicked , access the closest element with the class name "portfolio__name" and obtain the text contain
         const parentSiblingTitle = e.target.closest('.portfolio').querySelector('.portfolio__name').textContent;
+
+        //check if title exist before proceeding
         if(parentSiblingTitle){
+          //store the title in a variable called projectTitle with "sessionStorage"
           sessionStorage.setItem("projectTitle", parentSiblingTitle)
+
           window.location.href = e.currentTarget.href
         }
         
@@ -1266,18 +1273,19 @@ const createCaseStudyPage =() => {
     if(!portfolioCaseStudy) return;
     //  console.log(portfolioMarkup);
 
-    //clear meta and div content for each project before rendering
+    //clear meta with "data-dynamic" set to true, and div content for each project before rendering
     document.querySelectorAll('meta[data-dynamic = true]').forEach((data) => data.remove());
     portfolioCaseStudy.innerHTML = "";
     
+    //filter content based on project title stored in the activeCaseStudy variable
     let filteredContent = portfolioData.filter((data) => data.portfolio === activeCaseStudy)[0]?.content || [];
     console.log(filteredContent);
     
+    //checks if the contents exist, then exits if there's none after displaying a message for the users
     if(!filteredContent.length){
       alert("😊 oops! Sorry no case study at the moment\n Still working on them.\n\n Visit project 1 and 3 OR reach out to Emmibrill Udo ✌️");
       window.location.href = "portfolio.html";
       return;
-      
     }
    
     filteredContent.forEach((con) => {
@@ -1454,39 +1462,6 @@ document.addEventListener('DOMContentLoaded', () => {
   createCaseStudyPage()
 })
 
-function slideInAnimation(){
-  const slideInContent = document.querySelectorAll('.slideIn')
-  console.log(slideInContent)
- 
-   
-  const slideObserver = new IntersectionObserver((entries, obs)  => {
-    entries.forEach(entry => {
-    let status = (!entry.isIntersecting) ? "out of the screen" : "width-in the screen";
-    console.log(status)
-    
-    // obs.unobserve(entry.target)
-    })
-    
-  })
-  
-  for (let slide of slideInContent){ 
-    slide.addEventListener('animationstart', () => {
-       slideObserver.observe(slide)
-    })
-   
-  }
-   
-
-   
-
-  // let screenWidth = window.innerWidth
-  // let slideOffsetX = slide.getBoundingClientRect().left
-  // let diff = screenWidth - slideOffsetX
-  // console.log(`screen width: ${screenWidth}`)
-  // console.log(`slide offset X is: ${slideOffsetX}`)
-  // console.log(`the diff is: ${diff}`)
-}
-slideInAnimation()
 
 
 
