@@ -1461,11 +1461,6 @@ p{
     inset: 0;
 }
 
-/* .icon_container .fa-check {
-    color: rgb(18, 18, 18);
-    font-size: 4.5rem;
-} */
-
 .thank_you-par {
     width: 100%;
     border-radius: .2rem;
@@ -1831,7 +1826,7 @@ p{
     justify-content: center;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    transition: all 0.3s ease;
     box-shadow: var(--neu-shadow-dark), var(--neu-shadow-light); 
 }
 
@@ -1846,20 +1841,21 @@ p{
     border: 1px solid #0ff;
    
 }
-.active.service_con{
+.service_con.active{
     transform:translateY(-3px);
+    transform: scale(1.01);
     box-shadow:0 1rem 2rem  rgba(14, 13, 13, .5);
     border: 1px solid #0ff;
    
 }
 
 /*class active*/
-.active{    
+/* .active{    
     box-shadow:0 1rem 2rem  rgba(14, 13, 13, .5);
     transform: scale(1.01);
-    /* border: 1px solid rgb(71, 144, 116); */
+    border: 1px solid rgb(71, 144, 116);
     border: 1px solid #0ff;
-}
+} */
 
 .icon_con{
     position: relative;
@@ -1976,6 +1972,7 @@ p{
     padding: 1rem;
 }
 .tools_card{
+    position: relative;
     width: 100%;
     height: 100%;
     background: var(--form-input-bg-color);
@@ -1990,6 +1987,38 @@ p{
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
+    overflow: hidden;
+}
+
+.tools_card.active::before{
+    position: absolute;
+    width: 130%;
+    height: 6rem;
+    content: '';
+    background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-5)
+  );
+  z-index: -1;
+  animation: cardSpin 8s linear infinite;
+  transition: all .3s linear;
+}
+.tools_card.active::after{
+    position: absolute;
+    content: '';
+    background: black;
+    z-index: -1;
+    border-radius: inherit;
+    inset: .1rem;
+}
+
+@keyframes cardSpin {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
 }
 .tools_card:hover{
     transform: translateY(-4rem);
