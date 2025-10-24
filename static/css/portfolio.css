@@ -97,6 +97,7 @@ html,
 body {
     width: 100%;
     background: var(--bg-color-nav);
+     background: rgb(13, 25, 38);
 }
 
 
