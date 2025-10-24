@@ -1941,10 +1941,6 @@ p{
     color: var(--contact-submit-btn-text-color); 
     border: none;
     border-radius: 15px;
-    /*box-shadow: 
-    2px 2px 8px rgba(0, 204, 204, 0.4), 
-    -2px -2px 8px rgba(255, 255, 255, 0.3);
-    */
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     letter-spacing: 1px;
@@ -1980,50 +1976,12 @@ p{
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     align-items: center;
     justify-content: center;
-    text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
-    overflow: hidden;
 }
 
-.tools_card.active::before{
-    position: absolute;
-    width: 130%;
-    height: 6rem;
-    content: '';
-    background: conic-gradient(
-    from var(--gradient-angle),
-    var(--clr-1),
-    var(--clr-2),
-    var(--clr-3),
-    var(--clr-4),
-    var(--clr-5)
-  );
-  z-index: -1;
-  animation: cardSpin 8s linear infinite;
-  transition: all .3s linear;
-}
-.tools_card.active::after{
-    position: absolute;
-    content: '';
-    background: black;
-    z-index: -1;
-    border-radius: inherit;
-    inset: .1rem;
-}
-
-@keyframes cardSpin {
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}
-}
-.tools_card:hover{
-    transform: translateY(-4rem);
-    box-shadow: 0;
-}
 
 .tools_card .svg_con{
     width: 4rem;
