@@ -42,7 +42,7 @@
     --clr-4: #0f0;
     --clr-5: #0ff;
 
- --accent-deep: #0088a9; 
+    --accent-deep: #0088a9; 
 
     --clr-6: rgb(104, 152, 245);
     --clr-7: rgb(145, 111, 223);
@@ -87,8 +87,8 @@
     font-family: Rajdhani;
 
     /*  Neumorphism Shadows */
-  --neu-shadow-light: -8px -8px 20px rgba(255, 255, 255, 0.03);
-  --neu-shadow-dark: 8px 8px 20px rgba(0, 0, 0, 0.4);
+    --neu-shadow-light: -8px -8px 20px rgba(255, 255, 255, 0.03);
+    --neu-shadow-dark: 8px 8px 20px rgba(0, 0, 0, 0.4);
 
     
 }
@@ -160,7 +160,7 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: ;
       pointer-events: none;
     }
 
@@ -217,7 +217,7 @@ body {
     transition: all ease-in .3s;
 }
 
-.active::after,
+.list__tab.active::after,
 .list__tab:hover::after {
     width: 100%;
 }
@@ -291,11 +291,13 @@ body {
 
 
 /* style the footer section*/
-.footer_template {
+#footer_template {
     width: 100%;
     box-shadow: 0;
     left: 0;
+    bottom: 0;
     background: rgb(13, 25, 38);
+    background: rgb(9, 18, 28);
     border-top: 1px solid rgba(0, 255, 255, .2);
     border: none;
     z-index: 2;
