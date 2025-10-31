@@ -1322,7 +1322,7 @@ const createCaseStudyPage =() => {
         <meta data-dynamic = true name="keywords" content="${con.headProjectTitle}, ${con.PrimaryTech}, ${con.projectType}, Portfolio, Case Study, Emmanuel Okokon Udo - Emmbrill" />
 
       `
-     
+    //create the case study article structure
       const article = document.createElement('article');
       article.classList.add('project_description_card');
       article.setAttribute("aria-labelledby", "project-title");
@@ -1347,21 +1347,25 @@ const createCaseStudyPage =() => {
       portfolioCaseStudy.appendChild(article)
       console.log(portfolioCaseStudy);
 
+      // create main and footer elements
       const main = document.createElement('main')
       main.id = 'case_study_main';
       article.appendChild(main);
 
+      //footer element
       const footer = document.createElement('footer');
       footer.classList.add('casestudy_footer', 'small');
       footer.innerHTML = `
         <div>Made by <strong>Emmibrill Udo</strong> - <span class="muted">A passionate Fullstack Developer and Civil Engineer.</span></div>
       `
       article.appendChild(footer);
-      
+
+      // create section element for project overview
       const section = document.createElement('section');
       section.classList.add('project_overview');
       main.appendChild(section);
       
+      // append content to the section
       const sectionWrapper = document.createElement('div');
       sectionWrapper.innerHTML = `
         <div class="overview_con">${overViewDetails}</div>
@@ -1384,6 +1388,7 @@ const createCaseStudyPage =() => {
       `
       section.appendChild(sectionWrapper);
       
+      // create aside element for side content
       const sideInnerCon = document.createElement('div');
       sideInnerCon.innerHTML = `
         <div class="side_wrapper">
