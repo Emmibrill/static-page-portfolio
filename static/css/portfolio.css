@@ -560,6 +560,7 @@ body {
     border-radius: .3rem;
     box-shadow: var(--neu-shadow-dark), var(--neu-shadow-light);
     color: var(--clr-8);
+    cursor: pointer;
 }
 
 

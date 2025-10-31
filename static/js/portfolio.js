@@ -1339,7 +1339,7 @@ const createCaseStudyPage =() => {
 
           <div class="case_study_nav_con" style="text-align:right">
             <a class="case_study_nav" href="index.html"><i class="fa-solid fa-house"></i> back home</a>
-            <a class="case_study_nav" href="about.html"><i class="fa-solid fa-address-card"></i> about</a>
+            <a class="case_study_nav" href="about.html"><i class="fa-solid  fa-address-card"></i> about</a>
           </div>
         </header>
         
