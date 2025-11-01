@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   pageUp.addEventListener('click', () => {
-   
+    
+    pageUp.classList.add('active')
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
