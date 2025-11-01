@@ -1,9 +1,32 @@
 
 const myServicesCon = document.querySelector(".all_services");
 const frontendToolsWrapper = document.querySelector("#frontend");
+const pageUp = document.querySelector("#page_up");
 
-// const windowDetails = navigator.userAgent || window.opera;
-// console.log(windowDetails)
+function pageUpVisibility() {
+  if(!pageUp) return;
+
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 600){
+      pageUp.style.display = 'flex';
+    } else {
+      pageUp.style.display = 'none';
+    }
+  });
+
+  pageUp.addEventListener('click', () => {
+    if(window.scrollY > 600){
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  });
+
+}
+pageUpVisibility();
+
+
 
 window.addEventListener('load', () => {
   if(!document.querySelector('.preloader')) return
