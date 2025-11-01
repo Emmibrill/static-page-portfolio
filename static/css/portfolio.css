@@ -2023,7 +2023,7 @@ p{
 
 /* page up button */
 
-#page_up {
+.page_up {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -2042,23 +2042,25 @@ p{
     z-index: 1000;
 }
 
-#page_up i {
+.page_up i {
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-#page_up.active {
+.page_up:hover {
     background: var(--mobile-nav-text-color);
     color: var(--form-section-bg);
 }
-#page_up:hover {
-    background: var(--mobile-nav-text-color);
-    color: var(--form-section-bg);
-}
-#page_up:hover .fa-arrow-up {
+.page_up:hover .fa-arrow-up {
     color: var(--mobile-nav-bg);
 }
-
+.page_up.active {
+    background: var(--mobile-nav-bg);
+    color: var(--contact-submit-btn-text-color);
+}
+.page_up.active .fa-arrow-up {
+    color: var(--contact-submit-btn-text-color);
+}
 
 
 /** media queries **/

@@ -18,27 +18,26 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await pageUpVisibility("scroll_up", "template/scrollup.html");
   
-  const pageUp = document.querySelector("#scroll_up");
-  pageUp.style.display = 'none'
+  const scrollUp = document.querySelector("#scroll_up");
+  scrollUp.style.display = 'none'
  
   window.addEventListener('scroll', () => {
-
-    pageUp.classList.add('active')
     if(window.scrollY > 700){
-      pageUp.style.display = 'flex';
+      scrollUp.style.display = 'flex';
     } else {
-      pageUp.style.display = 'none';
+      scrollUp.style.display = 'none';
     }
   });
 
-  pageUp.addEventListener('click', () => {
+  scrollUp.addEventListener('click', () => {
     
-    pageUp.classList.add('active')
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
-    
+    scrollUp.querySelector('.page_up').classList.add('active');
+    // console.log( scrollUp.querySelector('.page_up'));
+
   });
 });
 
