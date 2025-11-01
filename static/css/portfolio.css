@@ -2047,9 +2047,12 @@ p{
     font-weight: bold;
 }
 
+#page_up.active {
+    background: var(--mobile-nav-text-color);
+    color: var(--form-section-bg);
+}
 #page_up:hover {
     background: var(--mobile-nav-text-color);
-    /* background: var(--contact-submit-btn-hover-text-color); */
     color: var(--form-section-bg);
 }
 #page_up:hover .fa-arrow-up {

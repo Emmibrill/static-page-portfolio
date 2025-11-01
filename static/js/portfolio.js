@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
  
   window.addEventListener('scroll', () => {
 
+    pageUp.classList.add('active')
     if(window.scrollY > 700){
       pageUp.style.display = 'flex';
     } else {
