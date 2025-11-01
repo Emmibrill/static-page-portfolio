@@ -2039,6 +2039,7 @@ p{
     cursor: pointer;
     box-shadow: 0 0.3rem 0.8rem rgba(47, 48, 49, 0.8);
     transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 #page_up i {

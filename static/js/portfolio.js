@@ -1,13 +1,29 @@
 
 const myServicesCon = document.querySelector(".all_services");
 const frontendToolsWrapper = document.querySelector("#frontend");
-const pageUp = document.querySelector("#page_up");
 
-function pageUpVisibility() {
-  if(!pageUp) return;
+// function to handle the visibility of the page up button
+async function pageUpVisibility(id, file) {
+  if (!document.getElementById(id)) return;
+  const  response = await fetch(file);
+  if (!response.ok) throw new Error("Network response was not ok and there was an error loading the page up template");
+  const template = await response.text();
+  document.getElementById(id).innerHTML = template;
 
+}
+
+// handle the page up button visibility and functionality
+document.addEventListener("DOMContentLoaded", async () => { 
+  if (!document.getElementById("scroll_up")) return;
+
+  await pageUpVisibility("scroll_up", "template/scrollup.html");
+  
+  const pageUp = document.querySelector("#scroll_up");
+  pageUp.style.display = 'none'
+ 
   window.addEventListener('scroll', () => {
-    if(window.scrollY > 600){
+
+    if(window.scrollY > 700){
       pageUp.style.display = 'flex';
     } else {
       pageUp.style.display = 'none';
@@ -15,16 +31,14 @@ function pageUpVisibility() {
   });
 
   pageUp.addEventListener('click', () => {
-    if(window.scrollY > 600){
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
+   
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
   });
-
-}
-pageUpVisibility();
+});
 
 
 
